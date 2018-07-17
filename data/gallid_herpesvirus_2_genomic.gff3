@@ -1,0 +1,287 @@
+##sequence-region NC_002229.3 1 177874
+##species https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?id=10390
+NC_002229.3	RefSeq	region	1	177874	.	+	.	ID=id0;Dbxref=taxon:10390;acronym=MDV-1;common=Marek's disease virus type 1;gb-acronym=GaHV-2;gb-synonym=Marek's disease virus type 1;gbkey=Src;genome=genomic;mol_type=genomic DNA;nat-host=Gallus gallus;note=very virulent strain;old-name=Gallid herpesvirus 2;strain=Md5
+NC_002229.3	RefSeq		1	14033	.	+	.	ID=id1;Note=TRL%3B inverted repeat flanking UL%3B CDS features are particular uncertain%2C and only strong candidates are annotated;gbkey=repeat_region
+NC_002229.3	RefSeq		1	1050	.	+	.	ID=id2;Note='a' sequence;gbkey=repeat_region
+NC_002229.3	RefSeq	direct_repeat	87	518	.	+	.	ID=id3;Note=7 copies of a 60 nuc repeat plus a partial copy of 12 nuc;gbkey=repeat_region;rpt_type=direct
+NC_002229.3	RefSeq	direct_repeat	583	962	.	+	.	ID=id4;Note=telomeric repeat region (mTMR)%3B 62 copies of a degenerate 6-7 nuc repeat plus a partial copy of 3 nuc;gbkey=repeat_region;rpt_type=direct
+NC_002229.3	RefSeq	direct_repeat	1223	1259	.	+	.	ID=id5;Note=6 copies of a 6 nuc repeat plus a partial copy of 4 nuc;gbkey=repeat_region;rpt_type=direct
+NC_002229.3	RefSeq	sequence_feature	1517	2176	.	+	.	ID=id6;Note=originally annotated as hypothetical protein CDS;gbkey=misc_feature
+NC_002229.3	RefSeq	gene	1676	2117	.	+	.	ID=gene0;Dbxref=GeneID:5291091;Name=vTR;gbkey=Gene;gene=vTR;gene_biotype=misc_RNA;locus_tag=MD5V_gs1
+NC_002229.3	RefSeq	transcript	1676	2117	.	+	.	ID=rna0;Parent=gene0;Dbxref=GeneID:5291091;gbkey=misc_RNA;gene=vTR;product=telomerase RNA subunit
+NC_002229.3	RefSeq	exon	1676	2117	.	+	.	ID=id7;Parent=rna0;Dbxref=GeneID:5291091;gbkey=misc_RNA;gene=vTR;product=telomerase RNA subunit
+NC_002229.3	RefSeq	sequence_feature	1882	2478	.	-	.	ID=id8;Note=originally annotated as Arg-rich protein CDS;gbkey=misc_feature
+NC_002229.3	RefSeq	gene	2853	3555	.	-	.	ID=gene1;Dbxref=GeneID:4811544;Name=MDV003;gbkey=Gene;gene=MDV003;gene_biotype=protein_coding;locus_tag=MD5V_003;old_locus_tag=GaHV2Md5_gp003
+NC_002229.3	RefSeq	CDS	3492	3555	.	-	0	ID=cds0;Parent=gene1;Dbxref=Genbank:YP_001033918.1,GeneID:4811544;Name=YP_001033918.1;gbkey=CDS;gene=MDV003;product=CXC chemokine;protein_id=YP_001033918.1
+NC_002229.3	RefSeq	CDS	3181	3316	.	-	2	ID=cds0;Parent=gene1;Dbxref=Genbank:YP_001033918.1,GeneID:4811544;Name=YP_001033918.1;gbkey=CDS;gene=MDV003;product=CXC chemokine;protein_id=YP_001033918.1
+NC_002229.3	RefSeq	CDS	2878	3082	.	-	1	ID=cds0;Parent=gene1;Dbxref=Genbank:YP_001033918.1,GeneID:4811544;Name=YP_001033918.1;gbkey=CDS;gene=MDV003;product=CXC chemokine;protein_id=YP_001033918.1
+NC_002229.3	RefSeq	region	2853	2858	.	-	.	ID=id9;Dbxref=GeneID:4811544;gbkey=polyA_signal;gene=MDV003
+NC_002229.3	RefSeq	gene	3718	4179	.	-	.	ID=gene2;Dbxref=GeneID:5291092;Name=RLORF4;gbkey=Gene;gene=RLORF4;gene_biotype=protein_coding;locus_tag=MD5V_gp1
+NC_002229.3	RefSeq	CDS	3751	4179	.	-	0	ID=cds1;Parent=gene2;Dbxref=Genbank:YP_001294935.1,GeneID:5291092;Name=YP_001294935.1;gbkey=CDS;gene=RLORF4;product=protein RLORF4;protein_id=YP_001294935.1
+NC_002229.3	RefSeq	region	3718	3723	.	-	.	ID=id10;Dbxref=GeneID:5291092;gbkey=polyA_signal;gene=RLORF4
+NC_002229.3	RefSeq	gene	4344	6753	.	-	.	ID=gene3;Dbxref=GeneID:4811550;Name=MDV005;gbkey=Gene;gene=MDV005;gene_biotype=protein_coding;locus_tag=MD5V_005;old_locus_tag=GaHV2Md5_gp004
+NC_002229.3	RefSeq	CDS	5734	6753	.	-	0	ID=cds2;Parent=gene3;Dbxref=Genbank:YP_001033919.1,GeneID:4811550;Name=YP_001033919.1;gbkey=CDS;gene=MDV005;product=oncoprotein MEQ;protein_id=YP_001033919.1
+NC_002229.3	RefSeq	region	4344	4349	.	-	.	ID=id11;Dbxref=GeneID:4811550;gbkey=polyA_signal;gene=MDV005
+NC_002229.3	RefSeq	sequence_feature	5878	6288	.	+	.	ID=id12;Note=originally annotated as 23 kDa nuclear protein CDS;gbkey=misc_feature
+NC_002229.3	RefSeq	sequence_feature	13105	13147	.	-	.	ID=id13;Note=originally annotated as 14 kDa lytic phase protein CDS using 5'-terminal exon a;gbkey=misc_feature;part=1/2
+NC_002229.3	RefSeq	sequence_feature	10505	10719	.	-	.	ID=id13;Note=originally annotated as 14 kDa lytic phase protein CDS using 5'-terminal exon a;gbkey=misc_feature;part=2/2
+NC_002229.3	RefSeq	sequence_feature	11755	11821	.	-	.	ID=id14;Note=originally annotated as 14 kDa lytic phase protein CDS using 5'-terminal exon b;gbkey=misc_feature;part=1/2
+NC_002229.3	RefSeq	sequence_feature	10505	10719	.	-	.	ID=id14;Note=originally annotated as 14 kDa lytic phase protein CDS using 5'-terminal exon b;gbkey=misc_feature;part=2/2
+NC_002229.3	RefSeq	sequence_feature	13045	13392	.	-	.	ID=id15;Note=originally annotated as hypothetical protein CDS;gbkey=misc_feature
+NC_002229.3	RefSeq	stem_loop	13296	13358	.	+	.	ID=id16;Note=ori palindrome;gbkey=stem_loop
+NC_002229.3	RefSeq	sequence_feature	13337	14338	.	-	.	ID=id17;Note=originally annotated as hypothetical protein CDS;gbkey=misc_feature
+NC_002229.3	RefSeq	gene	13833	16892	.	+	.	ID=gene4;Dbxref=GeneID:4811471;Name=MDV008;gbkey=Gene;gene=MDV008;gene_biotype=protein_coding;locus_tag=MD5V_008;old_locus_tag=GaHV2Md5_gp009
+NC_002229.3	RefSeq	CDS	13833	14300	.	+	0	ID=cds3;Parent=gene4;Dbxref=Genbank:YP_001033925.1,GeneID:4811471;Name=YP_001033925.1;Note=pp38 family;gbkey=CDS;gene=MDV008;product=protein pp24;protein_id=YP_001033925.1
+NC_002229.3	RefSeq	sequence_feature	14034	127591	.	+	.	ID=id18;Note=UL;gbkey=misc_feature
+NC_002229.3	RefSeq	gene	14535	16892	.	+	.	ID=gene5;Dbxref=GeneID:4811470;Name=MDV010;gbkey=Gene;gene=MDV010;gene_biotype=protein_coding;locus_tag=MD5V_010;old_locus_tag=GaHV2Md5_gp010
+NC_002229.3	RefSeq	CDS	14535	14630	.	+	0	ID=cds4;Parent=gene5;Dbxref=Genbank:YP_001033926.1,GeneID:4811470;Name=YP_001033926.1;gbkey=CDS;gene=MDV010;product=lipase;protein_id=YP_001033926.1
+NC_002229.3	RefSeq	CDS	14701	16875	.	+	0	ID=cds4;Parent=gene5;Dbxref=Genbank:YP_001033926.1,GeneID:4811470;Name=YP_001033926.1;gbkey=CDS;gene=MDV010;product=lipase;protein_id=YP_001033926.1
+NC_002229.3	RefSeq	region	16887	16892	.	+	.	ID=id19;Dbxref=GeneID:4811470;Note=MDV008%2C MDV010;gbkey=polyA_signal
+NC_002229.3	RefSeq	gene	17431	21714	.	+	.	ID=gene6;Dbxref=GeneID:4811473;Name=MDV012;Note=alpha gene;gbkey=Gene;gene=MDV012;gene_biotype=protein_coding;locus_tag=MD5V_012;old_locus_tag=GaHV2Md5_gp012
+NC_002229.3	RefSeq	CDS	17431	17539	.	+	0	ID=cds5;Parent=gene6;Dbxref=Genbank:YP_001033928.2,GeneID:4811473;Name=YP_001033928.2;Note=UL0 family;gbkey=CDS;gene=MDV012;product=protein LORF2;protein_id=YP_001033928.2
+NC_002229.3	RefSeq	CDS	17622	18982	.	+	2	ID=cds5;Parent=gene6;Dbxref=Genbank:YP_001033928.2,GeneID:4811473;Name=YP_001033928.2;Note=UL0 family;gbkey=CDS;gene=MDV012;product=protein LORF2;protein_id=YP_001033928.2
+NC_002229.3	RefSeq	gene	19172	21714	.	+	.	ID=gene7;Dbxref=GeneID:4811474;Name=MDV013;Note=core gene;gbkey=Gene;gene=MDV013;gene_biotype=protein_coding;locus_tag=MD5V_013;old_locus_tag=GaHV2Md5_gp013
+NC_002229.3	RefSeq	CDS	19172	19759	.	+	0	ID=cds6;Parent=gene7;Dbxref=Genbank:YP_001033929.1,GeneID:4811474;Name=YP_001033929.1;gbkey=CDS;gene=MDV013;product=envelope glycoprotein L;protein_id=YP_001033929.1
+NC_002229.3	RefSeq	gene	19641	21714	.	+	.	ID=gene8;Dbxref=GeneID:4811475;Name=MDV014;Note=core gene;gbkey=Gene;gene=MDV014;gene_biotype=protein_coding;locus_tag=MD5V_014;old_locus_tag=GaHV2Md5_gp014
+NC_002229.3	RefSeq	CDS	19641	20582	.	+	0	ID=cds7;Parent=gene8;Dbxref=Genbank:YP_001033930.1,GeneID:4811475;Name=YP_001033930.1;gbkey=CDS;gene=MDV014;product=uracil-DNA glycosylase;protein_id=YP_001033930.1
+NC_002229.3	RefSeq	gene	20652	21714	.	+	.	ID=gene9;Dbxref=GeneID:4811476;Name=MDV015;Note=alpha gene;gbkey=Gene;gene=MDV015;gene_biotype=protein_coding;locus_tag=MD5V_015;old_locus_tag=GaHV2Md5_gp015
+NC_002229.3	RefSeq	CDS	20652	21293	.	+	0	ID=cds8;Parent=gene9;Dbxref=Genbank:YP_001033931.2,GeneID:4811476;Name=YP_001033931.2;gbkey=CDS;gene=MDV015;product=nuclear protein UL3;protein_id=YP_001033931.2
+NC_002229.3	RefSeq	gene	21315	21714	.	+	.	ID=gene10;Dbxref=GeneID:5291093;Name=MDV015.5;Note=alpha gene;gbkey=Gene;gene=MDV015.5;gene_biotype=protein_coding;locus_tag=MD5V_015.5
+NC_002229.3	RefSeq	CDS	21315	21491	.	+	0	ID=cds9;Parent=gene10;Dbxref=Genbank:YP_001294936.1,GeneID:5291093;Name=YP_001294936.1;gbkey=CDS;gene=MDV015.5;product=protein V57;protein_id=YP_001294936.1
+NC_002229.3	RefSeq	region	21603	21608	.	+	.	ID=id20;Dbxref=GeneID:5291093;Note=MDV012%2C MDV013%2C MDV014%2C MDV015%2C MDV015.5;gbkey=polyA_signal
+NC_002229.3	RefSeq	region	21709	21714	.	+	.	ID=id21;Dbxref=GeneID:5291093;Note=MDV012%2C MDV013%2C MDV014%2C MDV015%2C MDV015.5;gbkey=polyA_signal
+NC_002229.3	RefSeq	gene	21642	25245	.	-	.	ID=gene11;Dbxref=GeneID:4811478;Name=MDV017;Note=core gene;gbkey=Gene;gene=MDV017;gene_biotype=protein_coding;locus_tag=MD5V_017;old_locus_tag=GaHV2Md5_gp017
+NC_002229.3	RefSeq	CDS	22669	25245	.	-	0	ID=cds10;Parent=gene11;Dbxref=Genbank:YP_001033933.1,GeneID:4811478;Name=YP_001033933.1;gbkey=CDS;gene=MDV017;product=helicase-primase helicase subunit;protein_id=YP_001033933.1
+NC_002229.3	RefSeq	gene	21642	22615	.	-	.	ID=gene12;Dbxref=GeneID:4811477;Name=MDV016;Note=alpha gene;gbkey=Gene;gene=MDV016;gene_biotype=protein_coding;locus_tag=MD5V_016;old_locus_tag=GaHV2Md5_gp016
+NC_002229.3	RefSeq	CDS	21809	22615	.	-	0	ID=cds11;Parent=gene12;Dbxref=Genbank:YP_001033932.1,GeneID:4811477;Name=YP_001033932.1;gbkey=CDS;gene=MDV016;product=nuclear protein UL4;protein_id=YP_001033932.1
+NC_002229.3	RefSeq	region	21642	21647	.	-	.	ID=id22;Dbxref=GeneID:4811477;Note=MDV016%2C MDV017;gbkey=polyA_signal
+NC_002229.3	RefSeq	region	21673	21678	.	-	.	ID=id23;Dbxref=GeneID:4811477;Note=MDV016%2C MDV017;gbkey=polyA_signal
+NC_002229.3	RefSeq	region	21748	21753	.	-	.	ID=id24;Dbxref=GeneID:4811477;Note=MDV016%2C MDV017;gbkey=polyA_signal;gene=MDV016
+NC_002229.3	RefSeq	gene	25313	28242	.	+	.	ID=gene13;Dbxref=GeneID:4811479;Name=MDV018;Note=core gene;gbkey=Gene;gene=MDV018;gene_biotype=protein_coding;locus_tag=MD5V_018;old_locus_tag=GaHV2Md5_gp018
+NC_002229.3	RefSeq	CDS	25313	27481	.	+	0	ID=cds12;Parent=gene13;Dbxref=Genbank:YP_001033934.1,GeneID:4811479;Name=YP_001033934.1;gbkey=CDS;gene=MDV018;product=capsid portal protein;protein_id=YP_001033934.1
+NC_002229.3	RefSeq	gene	27318	28242	.	+	.	ID=gene14;Dbxref=GeneID:4811480;Name=MDV019;Note=core gene;gbkey=Gene;gene=MDV019;gene_biotype=protein_coding;locus_tag=MD5V_019;old_locus_tag=GaHV2Md5_gp019
+NC_002229.3	RefSeq	CDS	27318	28235	.	+	0	ID=cds13;Parent=gene14;Dbxref=Genbank:YP_001033935.1,GeneID:4811480;Name=YP_001033935.1;gbkey=CDS;gene=MDV019;product=tegument protein UL7;protein_id=YP_001033935.1
+NC_002229.3	RefSeq	region	28237	28242	.	+	.	ID=id25;Dbxref=GeneID:4811480;Note=MDV018%2C MDV019;gbkey=polyA_signal
+NC_002229.3	RefSeq	gene	28211	33117	.	-	.	ID=gene15;Dbxref=GeneID:4811482;Name=MDV021;Note=core gene;gbkey=Gene;gene=MDV021;gene_biotype=protein_coding;locus_tag=MD5V_021;old_locus_tag=GaHV2Md5_gp021
+NC_002229.3	RefSeq	CDS	30592	33117	.	-	0	ID=cds14;Parent=gene15;Dbxref=Genbank:YP_001033937.1,GeneID:4811482;Name=YP_001033937.1;gbkey=CDS;gene=MDV021;product=DNA replication origin-binding helicase;protein_id=YP_001033937.1
+NC_002229.3	RefSeq	gene	28211	30578	.	-	.	ID=gene16;Dbxref=GeneID:4811481;Name=MDV020;Note=core gene;gbkey=Gene;gene=MDV020;gene_biotype=protein_coding;locus_tag=MD5V_020;old_locus_tag=GaHV2Md5_gp020
+NC_002229.3	RefSeq	CDS	28269	30578	.	-	0	ID=cds15;Parent=gene16;Dbxref=Genbank:YP_001033936.1,GeneID:4811481;Name=YP_001033936.1;gbkey=CDS;gene=MDV020;product=helicase-primase subunit;protein_id=YP_001033936.1
+NC_002229.3	RefSeq	region	28211	28216	.	-	.	ID=id26;Dbxref=GeneID:4811481;Note=MDV020%2C MDV021;gbkey=polyA_signal
+NC_002229.3	RefSeq	region	28272	28277	.	-	.	ID=id27;Dbxref=GeneID:4811481;Note=MDV020%2C MDV021;gbkey=polyA_signal
+NC_002229.3	RefSeq	gene	33216	34558	.	+	.	ID=gene17;Dbxref=GeneID:4811483;Name=MDV022;Note=core gene;gbkey=Gene;gene=MDV022;gene_biotype=protein_coding;locus_tag=MD5V_022;old_locus_tag=GaHV2Md5_gp022
+NC_002229.3	RefSeq	CDS	33216	34490	.	+	0	ID=cds16;Parent=gene17;Dbxref=Genbank:YP_001033938.1,GeneID:4811483;Name=YP_001033938.1;gbkey=CDS;gene=MDV022;product=envelope glycoprotein M;protein_id=YP_001033938.1
+NC_002229.3	RefSeq	region	34512	34517	.	+	.	ID=id28;Dbxref=GeneID:4811483;gbkey=polyA_signal;gene=MDV022
+NC_002229.3	RefSeq	region	34553	34558	.	+	.	ID=id29;Dbxref=GeneID:4811483;gbkey=polyA_signal;gene=MDV022
+NC_002229.3	RefSeq	gene	34544	38329	.	-	.	ID=gene18;Dbxref=GeneID:4811487;Name=MDV026;Note=core gene;gbkey=Gene;gene=MDV026;gene_biotype=protein_coding;locus_tag=MD5V_026;old_locus_tag=GaHV2Md5_gp026
+NC_002229.3	RefSeq	CDS	37598	38329	.	-	0	ID=cds17;Parent=gene18;Dbxref=Genbank:YP_001033942.1,GeneID:4811487;Name=YP_001033942.1;gbkey=CDS;gene=MDV026;product=tegument protein UL14;protein_id=YP_001033942.1
+NC_002229.3	RefSeq	gene	34544	37880	.	-	.	ID=gene19;Dbxref=GeneID:4811486;Name=MDV025;Note=core gene;gbkey=Gene;gene=MDV025;gene_biotype=protein_coding;locus_tag=MD5V_025;old_locus_tag=GaHV2Md5_gp025
+NC_002229.3	RefSeq	CDS	36339	37880	.	-	0	ID=cds18;Parent=gene19;Dbxref=Genbank:YP_001033941.1,GeneID:4811486;Name=YP_001033941.1;Note=PK family;gbkey=CDS;gene=MDV025;product=tegument serine/threonine protein kinase;protein_id=YP_001033941.1
+NC_002229.3	RefSeq	gene	34544	36348	.	-	.	ID=gene20;Dbxref=GeneID:4811485;Name=MDV024;Note=core gene;gbkey=Gene;gene=MDV024;gene_biotype=protein_coding;locus_tag=MD5V_024;old_locus_tag=GaHV2Md5_gp024
+NC_002229.3	RefSeq	CDS	34774	36348	.	-	0	ID=cds19;Parent=gene20;Dbxref=Genbank:YP_001033940.1,GeneID:4811485;Name=YP_001033940.1;gbkey=CDS;gene=MDV024;product=deoxyribonuclease;protein_id=YP_001033940.1
+NC_002229.3	RefSeq	gene	34544	34798	.	-	.	ID=gene21;Dbxref=GeneID:4811484;Name=MDV023;Note=core gene;gbkey=Gene;gene=MDV023;gene_biotype=protein_coding;locus_tag=MD5V_023;old_locus_tag=GaHV2Md5_gp023
+NC_002229.3	RefSeq	CDS	34544	34798	.	-	0	ID=cds20;Parent=gene21;Dbxref=Genbank:YP_001033939.1,GeneID:4811484;Name=YP_001033939.1;gbkey=CDS;gene=MDV023;product=myristylated tegument protein;protein_id=YP_001033939.1
+NC_002229.3	RefSeq	region	34550	34555	.	-	.	ID=id30;Dbxref=GeneID:4811484;Note=MDV023%2C MDV024%2C MDV025%2C MDV026;gbkey=polyA_signal
+NC_002229.3	RefSeq	gene	38360	44128	.	+	.	ID=gene22;Dbxref=GeneID:4811488;Name=MDV027;Note=core gene;gbkey=Gene;gene=MDV027;gene_biotype=protein_coding;locus_tag=MD5V_027;old_locus_tag=GaHV2Md5_gp027
+NC_002229.3	RefSeq	CDS	38360	39403	.	+	0	ID=cds21;Parent=gene22;Dbxref=Genbank:YP_001033943.1,GeneID:4811488;Name=YP_001033943.1;gbkey=CDS;gene=MDV027;product=DNA packaging terminase subunit 1;protein_id=YP_001033943.1
+NC_002229.3	RefSeq	CDS	42885	44054	.	+	0	ID=cds21;Parent=gene22;Dbxref=Genbank:YP_001033943.1,GeneID:4811488;Name=YP_001033943.1;gbkey=CDS;gene=MDV027;product=DNA packaging terminase subunit 1;protein_id=YP_001033943.1
+NC_002229.3	RefSeq	region	44123	44128	.	+	.	ID=id31;Dbxref=GeneID:4811488;gbkey=polyA_signal;gene=MDV027
+NC_002229.3	RefSeq	gene	39443	42741	.	-	.	ID=gene23;Dbxref=GeneID:4811490;Name=MDV029;Note=core gene;gbkey=Gene;gene=MDV029;gene_biotype=protein_coding;locus_tag=MD5V_029;old_locus_tag=GaHV2Md5_gp029
+NC_002229.3	RefSeq	CDS	40552	42741	.	-	0	ID=cds22;Parent=gene23;Dbxref=Genbank:YP_001033945.1,GeneID:4811490;Name=YP_001033945.1;gbkey=CDS;gene=MDV029;product=DNA packaging tegument protein UL17;protein_id=YP_001033945.1
+NC_002229.3	RefSeq	gene	39443	40525	.	-	.	ID=gene24;Dbxref=GeneID:4811489;Name=MDV028;Note=core gene;gbkey=Gene;gene=MDV028;gene_biotype=protein_coding;locus_tag=MD5V_028;old_locus_tag=GaHV2Md5_gp028
+NC_002229.3	RefSeq	CDS	39443	40525	.	-	0	ID=cds23;Parent=gene24;Dbxref=Genbank:YP_001033944.1,GeneID:4811489;Name=YP_001033944.1;gbkey=CDS;gene=MDV028;product=tegument protein UL16;protein_id=YP_001033944.1
+NC_002229.3	RefSeq	gene	44164	50447	.	-	.	ID=gene25;Dbxref=GeneID:4811493;Name=MDV032;Note=alpha gene;gbkey=Gene;gene=MDV032;gene_biotype=protein_coding;locus_tag=MD5V_032;old_locus_tag=GaHV2Md5_gp032
+NC_002229.3	RefSeq	CDS	49743	50447	.	-	0	ID=cds24;Parent=gene25;Dbxref=Genbank:YP_001033948.1,GeneID:4811493;Name=YP_001033948.1;gbkey=CDS;gene=MDV032;product=envelope protein UL20;protein_id=YP_001033948.1
+NC_002229.3	RefSeq	gene	44164	49439	.	-	.	ID=gene26;Dbxref=GeneID:4811492;Name=MDV031;Note=core gene;gbkey=Gene;gene=MDV031;gene_biotype=protein_coding;locus_tag=MD5V_031;old_locus_tag=GaHV2Md5_gp031
+NC_002229.3	RefSeq	CDS	45258	49439	.	-	0	ID=cds25;Parent=gene26;Dbxref=Genbank:YP_001033947.1,GeneID:4811492;Name=YP_001033947.1;gbkey=CDS;gene=MDV031;product=major capsid protein;protein_id=YP_001033947.1
+NC_002229.3	RefSeq	gene	44164	45132	.	-	.	ID=gene27;Dbxref=GeneID:4811491;Name=MDV030;Note=core gene;gbkey=Gene;gene=MDV030;gene_biotype=protein_coding;locus_tag=MD5V_030;old_locus_tag=GaHV2Md5_gp030
+NC_002229.3	RefSeq	CDS	44173	45132	.	-	0	ID=cds26;Parent=gene27;Dbxref=Genbank:YP_001033946.1,GeneID:4811491;Name=YP_001033946.1;gbkey=CDS;gene=MDV030;product=capsid triplex subunit 2;protein_id=YP_001033946.1
+NC_002229.3	RefSeq	region	44164	44169	.	-	.	ID=id32;Dbxref=GeneID:4811491;Note=MDV030%2C MDV031%2C MDV032;gbkey=polyA_signal
+NC_002229.3	RefSeq	region	44168	44173	.	-	.	ID=id33;Dbxref=GeneID:4811491;Note=MDV030%2C MDV031%2C MDV032;gbkey=polyA_signal
+NC_002229.3	RefSeq	region	44172	44177	.	-	.	ID=id34;Dbxref=GeneID:4811491;Note=MDV030%2C MDV031%2C MDV032;gbkey=polyA_signal;gene=MDV030
+NC_002229.3	RefSeq	gene	50708	52446	.	+	.	ID=gene28;Dbxref=GeneID:4811494;Name=MDV033;Note=alpha gene;gbkey=Gene;gene=MDV033;gene_biotype=protein_coding;locus_tag=MD5V_033;old_locus_tag=GaHV2Md5_gp033
+NC_002229.3	RefSeq	CDS	50708	52348	.	+	0	ID=cds27;Parent=gene28;Dbxref=Genbank:YP_001033949.1,GeneID:4811494;Name=YP_001033949.1;gbkey=CDS;gene=MDV033;product=tegument protein UL21;protein_id=YP_001033949.1
+NC_002229.3	RefSeq	region	52441	52446	.	+	.	ID=id35;Dbxref=GeneID:4811494;gbkey=polyA_signal;gene=MDV033
+NC_002229.3	RefSeq	gene	52479	56177	.	-	.	ID=gene29;Dbxref=GeneID:4811496;Name=MDV036;Note=core gene;gbkey=Gene;gene=MDV036;gene_biotype=protein_coding;locus_tag=MD5V_036;old_locus_tag=GaHV2Md5_gp035
+NC_002229.3	RefSeq	CDS	55119	56177	.	-	0	ID=cds28;Parent=gene29;Dbxref=Genbank:YP_001033951.1,GeneID:4811496;Name=YP_001033951.1;gbkey=CDS;gene=MDV036;product=thymidine kinase;protein_id=YP_001033951.1
+NC_002229.3	RefSeq	gene	52479	54936	.	-	.	ID=gene30;Dbxref=GeneID:4811495;Name=MDV034;Note=core gene;gbkey=Gene;gene=MDV034;gene_biotype=protein_coding;locus_tag=MD5V_034;old_locus_tag=GaHV2Md5_gp034
+NC_002229.3	RefSeq	CDS	52495	54936	.	-	0	ID=cds29;Parent=gene30;Dbxref=Genbank:YP_001033950.1,GeneID:4811495;Name=YP_001033950.1;gbkey=CDS;gene=MDV034;product=envelope glycoprotein H;protein_id=YP_001033950.1
+NC_002229.3	RefSeq	region	52479	52484	.	-	.	ID=id36;Dbxref=GeneID:4811495;Note=MDV034%2C MDV036;gbkey=polyA_signal
+NC_002229.3	RefSeq	region	52483	52488	.	-	.	ID=id37;Dbxref=GeneID:4811495;Note=MDV034%2C MDV036;gbkey=polyA_signal
+NC_002229.3	RefSeq	gene	56132	60996	.	+	.	ID=gene31;Dbxref=GeneID:4811498;Name=MDV035;Note=core gene;gbkey=Gene;gene=MDV035;gene_biotype=protein_coding;locus_tag=MD5V_035;old_locus_tag=GaHV2Md5_gp036
+NC_002229.3	RefSeq	CDS	56132	57046	.	+	0	ID=cds30;Parent=gene31;Dbxref=Genbank:YP_001033952.1,GeneID:4811498;Name=YP_001033952.1;gbkey=CDS;gene=MDV035;product=nuclear protein UL24;protein_id=YP_001033952.1
+NC_002229.3	RefSeq	gene	57141	60996	.	+	.	ID=gene32;Dbxref=GeneID:4811497;Name=MDV037;Note=core gene;gbkey=Gene;gene=MDV037;gene_biotype=protein_coding;locus_tag=MD5V_037;old_locus_tag=GaHV2Md5_gp037
+NC_002229.3	RefSeq	CDS	57141	58892	.	+	0	ID=cds31;Parent=gene32;Dbxref=Genbank:YP_001033953.1,GeneID:4811497;Name=YP_001033953.1;gbkey=CDS;gene=MDV037;product=DNA packaging tegument protein UL25;protein_id=YP_001033953.1
+NC_002229.3	RefSeq	gene	58933	60996	.	+	.	ID=gene33;Dbxref=GeneID:4811499;Name=MDV038;Note=core gene;gbkey=Gene;gene=MDV038;gene_biotype=protein_coding;locus_tag=MD5V_038;old_locus_tag=GaHV2Md5_gp038
+NC_002229.3	RefSeq	CDS	58933	60924	.	+	0	ID=cds32;Parent=gene33;Dbxref=Genbank:YP_001033954.1,GeneID:4811499;Name=YP_001033954.1;gbkey=CDS;gene=MDV038;product=capsid maturation protease;protein_id=YP_001033954.1
+NC_002229.3	RefSeq	gene	59887	60996	.	+	.	ID=gene34;Dbxref=GeneID:4811500;Name=MDV039;Note=core gene;gbkey=Gene;gene=MDV039;gene_biotype=protein_coding;locus_tag=MD5V_039;old_locus_tag=GaHV2Md5_gp039
+NC_002229.3	RefSeq	CDS	59887	60924	.	+	0	ID=cds33;Parent=gene34;Dbxref=Genbank:YP_001033955.1,GeneID:4811500;Name=YP_001033955.1;gbkey=CDS;gene=MDV039;product=capsid scaffold protein;protein_id=YP_001033955.1
+NC_002229.3	RefSeq	region	60991	60996	.	-	.	ID=id38;Note=MDV035%2C MDV037%2C MDV038%2C MDV039;gbkey=polyA_signal
+NC_002229.3	RefSeq	gene	61025	66108	.	-	.	ID=gene35;Dbxref=GeneID:4811502;Name=MDV041;Note=core gene;gbkey=Gene;gene=MDV041;gene_biotype=protein_coding;locus_tag=MD5V_041;old_locus_tag=GaHV2Md5_gp041
+NC_002229.3	RefSeq	CDS	63727	66108	.	-	0	ID=cds34;Parent=gene35;Dbxref=Genbank:YP_001033957.1,GeneID:4811502;Name=YP_001033957.1;gbkey=CDS;gene=MDV041;product=DNA packaging terminase subunit 2;protein_id=YP_001033957.1
+NC_002229.3	RefSeq	gene	61025	63652	.	-	.	ID=gene36;Dbxref=GeneID:4811501;Name=MDV040;Note=core gene;gbkey=Gene;gene=MDV040;gene_biotype=protein_coding;locus_tag=MD5V_040;old_locus_tag=GaHV2Md5_gp040
+NC_002229.3	RefSeq	CDS	61055	63652	.	-	0	ID=cds35;Parent=gene36;Dbxref=Genbank:YP_001033956.1,GeneID:4811501;Name=YP_001033956.1;gbkey=CDS;gene=MDV040;product=envelope glycoprotein B;protein_id=YP_001033956.1
+NC_002229.3	RefSeq	region	61025	61030	.	-	.	ID=id39;Dbxref=GeneID:4811501;Note=MDV040%2C MDV041;gbkey=polyA_signal
+NC_002229.3	RefSeq	gene	66243	69875	.	-	.	ID=gene37;Dbxref=GeneID:4811503;Name=MDV042;Note=core gene;gbkey=Gene;gene=MDV042;gene_biotype=protein_coding;locus_tag=MD5V_042;old_locus_tag=GaHV2Md5_gp042
+NC_002229.3	RefSeq	CDS	66300	69875	.	-	0	ID=cds36;Parent=gene37;Dbxref=Genbank:YP_001033958.1,GeneID:4811503;Name=YP_001033958.1;gbkey=CDS;gene=MDV042;product=single-stranded DNA-binding protein;protein_id=YP_001033958.1
+NC_002229.3	RefSeq	region	66243	66248	.	-	.	ID=id40;Dbxref=GeneID:4811503;gbkey=polyA_signal;gene=MDV042
+NC_002229.3	RefSeq	gene	70144	73827	.	+	.	ID=gene38;Dbxref=GeneID:4811504;Name=MDV043;Note=core gene;gbkey=Gene;gene=MDV043;gene_biotype=protein_coding;locus_tag=MD5V_043;old_locus_tag=GaHV2Md5_gp043
+NC_002229.3	RefSeq	CDS	70144	73806	.	+	0	ID=cds37;Parent=gene38;Dbxref=Genbank:YP_001033959.1,GeneID:4811504;Name=YP_001033959.1;gbkey=CDS;gene=MDV043;product=DNA polymerase catalytic subunit;protein_id=YP_001033959.1
+NC_002229.3	RefSeq	region	73822	73827	.	+	.	ID=id41;Dbxref=GeneID:4811504;gbkey=polyA_signal;gene=MDV043
+NC_002229.3	RefSeq	gene	73636	76574	.	-	.	ID=gene39;Dbxref=GeneID:4811506;Name=MDV046;Note=core gene;gbkey=Gene;gene=MDV046;gene_biotype=protein_coding;locus_tag=MD5V_046;old_locus_tag=GaHV2Md5_gp045
+NC_002229.3	RefSeq	CDS	74649	76574	.	-	0	ID=cds38;Parent=gene39;Dbxref=Genbank:YP_001033961.1,GeneID:4811506;Name=YP_001033961.1;gbkey=CDS;gene=MDV046;product=DNA packaging protein UL32;protein_id=YP_001033961.1
+NC_002229.3	RefSeq	gene	73636	74632	.	-	.	ID=gene40;Dbxref=GeneID:4811505;Name=MDV044;Note=core gene;gbkey=Gene;gene=MDV044;gene_biotype=protein_coding;locus_tag=MD5V_044;old_locus_tag=GaHV2Md5_gp044
+NC_002229.3	RefSeq	CDS	73730	74632	.	-	0	ID=cds39;Parent=gene40;Dbxref=Genbank:YP_001033960.1,GeneID:4811505;Name=YP_001033960.1;gbkey=CDS;gene=MDV044;product=nuclear egress lamina protein;protein_id=YP_001033960.1
+NC_002229.3	RefSeq	region	73636	73641	.	-	.	ID=id42;Dbxref=GeneID:4811505;Note=MDV044%2C MDV046;gbkey=polyA_signal
+NC_002229.3	RefSeq	gene	76573	78399	.	+	.	ID=gene41;Dbxref=GeneID:4811508;Name=MDV045;Note=core gene;gbkey=Gene;gene=MDV045;gene_biotype=protein_coding;locus_tag=MD5V_045;old_locus_tag=GaHV2Md5_gp046
+NC_002229.3	RefSeq	CDS	76573	76977	.	+	0	ID=cds40;Parent=gene41;Dbxref=Genbank:YP_001033962.1,GeneID:4811508;Name=YP_001033962.1;gbkey=CDS;gene=MDV045;product=DNA packaging protein UL33;protein_id=YP_001033962.1
+NC_002229.3	RefSeq	gene	77070	78399	.	+	.	ID=gene42;Dbxref=GeneID:4811507;Name=MDV047;Note=core gene;gbkey=Gene;gene=MDV047;gene_biotype=protein_coding;locus_tag=MD5V_047;old_locus_tag=GaHV2Md5_gp047
+NC_002229.3	RefSeq	CDS	77070	77903	.	+	0	ID=cds41;Parent=gene42;Dbxref=Genbank:YP_001033963.1,GeneID:4811507;Name=YP_001033963.1;gbkey=CDS;gene=MDV047;product=nuclear egress membrane protein;protein_id=YP_001033963.1
+NC_002229.3	RefSeq	gene	77987	78399	.	+	.	ID=gene43;Dbxref=GeneID:4811509;Name=MDV048;gbkey=Gene;gene=MDV048;gene_biotype=protein_coding;gene_synonym=core gene;locus_tag=MD5V_048;old_locus_tag=GaHV2Md5_gp048
+NC_002229.3	RefSeq	CDS	77987	78382	.	+	0	ID=cds42;Parent=gene43;Dbxref=Genbank:YP_001033964.1,GeneID:4811509;Name=YP_001033964.1;gbkey=CDS;gene=MDV048;product=small capsid protein;protein_id=YP_001033964.1
+NC_002229.3	RefSeq	region	78381	78386	.	+	.	ID=id43;Dbxref=GeneID:4811509;Note=MDV045%2C MDV047%2C MDV048;gbkey=polyA_signal
+NC_002229.3	RefSeq	region	78394	78399	.	+	.	ID=id44;Dbxref=GeneID:4811509;Note=MDV045%2C MDV047%2C MDV048;gbkey=polyA_signal
+NC_002229.3	RefSeq	gene	78438	91826	.	-	.	ID=gene44;Dbxref=GeneID:4811511;Name=MDV050;Note=core gene;gbkey=Gene;gene=MDV050;gene_biotype=protein_coding;locus_tag=MD5V_050;old_locus_tag=GaHV2Md5_gp050
+NC_002229.3	RefSeq	CDS	88686	91826	.	-	0	ID=cds43;Parent=gene44;Dbxref=Genbank:YP_001033966.1,GeneID:4811511;Name=YP_001033966.1;gbkey=CDS;gene=MDV050;product=tegument protein UL37;protein_id=YP_001033966.1
+NC_002229.3	RefSeq	gene	78438	88471	.	-	.	ID=gene45;Dbxref=GeneID:4811510;Name=MDV049;Note=core gene;gbkey=Gene;gene=MDV049;gene_biotype=protein_coding;locus_tag=MD5V_049;old_locus_tag=GaHV2Md5_gp049
+NC_002229.3	RefSeq	CDS	78443	88471	.	-	0	ID=cds44;Parent=gene45;Dbxref=Genbank:YP_001033965.1,GeneID:4811510;Name=YP_001033965.1;gbkey=CDS;gene=MDV049;product=large tegument protein;protein_id=YP_001033965.1
+NC_002229.3	RefSeq	region	78438	78443	.	-	.	ID=id45;Dbxref=GeneID:4811510;Note=MDV049%2C MDV050;gbkey=polyA_signal
+NC_002229.3	RefSeq	gene	92197	93653	.	+	.	ID=gene46;Dbxref=GeneID:4811512;Name=MDV051;Note=core gene;gbkey=Gene;gene=MDV051;gene_biotype=protein_coding;locus_tag=MD5V_051;old_locus_tag=GaHV2Md5_gp051
+NC_002229.3	RefSeq	CDS	92197	93609	.	+	0	ID=cds45;Parent=gene46;Dbxref=Genbank:YP_001033967.1,GeneID:4811512;Name=YP_001033967.1;gbkey=CDS;gene=MDV051;product=capsid triplex subunit 1;protein_id=YP_001033967.1
+NC_002229.3	RefSeq	region	93648	93653	.	+	.	ID=id46;Dbxref=GeneID:4811512;gbkey=polyA_signal;gene=MDV051
+NC_002229.3	RefSeq	gene	93831	97426	.	+	.	ID=gene47;Dbxref=GeneID:4811513;Name=MDV052;Note=core gene;gbkey=Gene;gene=MDV052;gene_biotype=protein_coding;locus_tag=MD5V_052;old_locus_tag=GaHV2Md5_gp052
+NC_002229.3	RefSeq	CDS	93831	96299	.	+	0	ID=cds46;Parent=gene47;Dbxref=Genbank:YP_001033968.1,GeneID:4811513;Name=YP_001033968.1;gbkey=CDS;gene=MDV052;product=ribonucleotide reductase subunit 1;protein_id=YP_001033968.1
+NC_002229.3	RefSeq	gene	96352	97426	.	+	.	ID=gene48;Dbxref=GeneID:4811514;Name=MDV053;Note=core gene;gbkey=Gene;gene=MDV053;gene_biotype=protein_coding;locus_tag=MD5V_053;old_locus_tag=GaHV2Md5_gp053
+NC_002229.3	RefSeq	CDS	96352	97383	.	+	0	ID=cds47;Parent=gene48;Dbxref=Genbank:YP_001033969.1,GeneID:4811514;Name=YP_001033969.1;gbkey=CDS;gene=MDV053;product=ribonucleotide reductase subunit 2;protein_id=YP_001033969.1
+NC_002229.3	RefSeq	region	97421	97426	.	+	.	ID=id47;Dbxref=GeneID:4811514;Note=MDV052%2C MDV053;gbkey=polyA_signal
+NC_002229.3	RefSeq	gene	97379	98756	.	-	.	ID=gene49;Dbxref=GeneID:4811515;Name=MDV054;Note=alpha gene;gbkey=Gene;gene=MDV054;gene_biotype=protein_coding;locus_tag=MD5V_054;old_locus_tag=GaHV2Md5_gp054
+NC_002229.3	RefSeq	CDS	97431	98756	.	-	0	ID=cds48;Parent=gene49;Dbxref=Genbank:YP_001033970.1,GeneID:4811515;Name=YP_001033970.1;gbkey=CDS;gene=MDV054;product=tegument host shutoff protein;protein_id=YP_001033970.1
+NC_002229.3	RefSeq	region	97379	97384	.	-	.	ID=id48;Dbxref=GeneID:4811515;gbkey=polyA_signal;gene=MDV054
+NC_002229.3	RefSeq	gene	99413	102006	.	+	.	ID=gene50;Dbxref=GeneID:4811516;Name=MDV055;Note=core gene;gbkey=Gene;gene=MDV055;gene_biotype=protein_coding;locus_tag=MD5V_055;old_locus_tag=GaHV2Md5_gp055
+NC_002229.3	RefSeq	CDS	99413	100522	.	+	0	ID=cds49;Parent=gene50;Dbxref=Genbank:YP_001033971.1,GeneID:4811516;Name=YP_001033971.1;gbkey=CDS;gene=MDV055;product=DNA polymerase processivity subunit;protein_id=YP_001033971.1
+NC_002229.3	RefSeq	gene	100682	102006	.	+	.	ID=gene51;Dbxref=GeneID:4811517;Name=MDV056;Note=core gene;gbkey=Gene;gene=MDV056;gene_biotype=protein_coding;locus_tag=MD5V_056;old_locus_tag=GaHV2Md5_gp056
+NC_002229.3	RefSeq	CDS	100682	101944	.	+	0	ID=cds50;Parent=gene51;Dbxref=Genbank:YP_001033972.1,GeneID:4811517;Name=YP_001033972.1;gbkey=CDS;gene=MDV056;product=envelope protein UL43;protein_id=YP_001033972.1
+NC_002229.3	RefSeq	region	102001	102006	.	+	.	ID=id49;Dbxref=GeneID:4811517;Note=MDV055%2C MDV056;gbkey=polyA_signal
+NC_002229.3	RefSeq	gene	102164	103827	.	+	.	ID=gene52;Dbxref=GeneID:4811518;Name=MDV057;Note=alpha gene;gbkey=Gene;gene=MDV057;gene_biotype=protein_coding;locus_tag=MD5V_057;old_locus_tag=GaHV2Md5_gp057
+NC_002229.3	RefSeq	CDS	102164	103669	.	+	0	ID=cds51;Parent=gene52;Dbxref=Genbank:YP_001033973.1,GeneID:4811518;Name=YP_001033973.1;gbkey=CDS;gene=MDV057;product=envelope glycoprotein C;protein_id=YP_001033973.1
+NC_002229.3	RefSeq	region	103695	103700	.	+	.	ID=id50;Dbxref=GeneID:4811518;gbkey=polyA_signal;gene=MDV057
+NC_002229.3	RefSeq	region	103822	103827	.	+	.	ID=id51;Dbxref=GeneID:4811518;gbkey=polyA_signal;gene=MDV057
+NC_002229.3	RefSeq	gene	104532	105180	.	+	.	ID=gene53;Dbxref=GeneID:4811519;Name=MDV058;Note=alpha gene;gbkey=Gene;gene=MDV058;gene_biotype=protein_coding;locus_tag=MD5V_058;old_locus_tag=GaHV2Md5_gp058
+NC_002229.3	RefSeq	CDS	104532	105167	.	+	0	ID=cds52;Parent=gene53;Dbxref=Genbank:YP_001033974.1,GeneID:4811519;Name=YP_001033974.1;gbkey=CDS;gene=MDV058;product=membrane protein UL45;protein_id=YP_001033974.1
+NC_002229.3	RefSeq	region	105163	105168	.	+	.	ID=id52;Dbxref=GeneID:4811519;gbkey=polyA_signal;gene=MDV058
+NC_002229.3	RefSeq	region	105175	105180	.	+	.	ID=id53;Dbxref=GeneID:4811519;gbkey=polyA_signal;gene=MDV058
+NC_002229.3	RefSeq	gene	105201	109574	.	-	.	ID=gene54;Dbxref=GeneID:4811521;Name=MDV060;Note=alpha gene;gbkey=Gene;gene=MDV060;gene_biotype=protein_coding;locus_tag=MD5V_060;old_locus_tag=GaHV2Md5_gp060
+NC_002229.3	RefSeq	CDS	107148	109574	.	-	0	ID=cds53;Parent=gene54;Dbxref=Genbank:YP_001033976.1,GeneID:4811521;Name=YP_001033976.1;gbkey=CDS;gene=MDV060;product=tegument protein VP13/14;protein_id=YP_001033976.1
+NC_002229.3	RefSeq	gene	105201	107006	.	-	.	ID=gene55;Dbxref=GeneID:4811520;Name=MDV059;Note=alpha gene;gbkey=Gene;gene=MDV059;gene_biotype=protein_coding;locus_tag=MD5V_059;old_locus_tag=GaHV2Md5_gp059
+NC_002229.3	RefSeq	CDS	105300	107006	.	-	0	ID=cds54;Parent=gene55;Dbxref=Genbank:YP_001033975.1,GeneID:4811520;Name=YP_001033975.1;gbkey=CDS;gene=MDV059;product=tegument protein VP11/12;protein_id=YP_001033975.1
+NC_002229.3	RefSeq	region	105201	105206	.	-	.	ID=id54;Dbxref=GeneID:4811520;Note=MDV059%2C MDV060;gbkey=polyA_signal
+NC_002229.3	RefSeq	region	105209	105214	.	-	.	ID=id55;Dbxref=GeneID:4811520;Note=MDV059%2C MDV060;gbkey=polyA_signal
+NC_002229.3	RefSeq	gene	109725	111096	.	-	.	ID=gene56;Dbxref=GeneID:4811522;Name=MDV061;Note=alpha gene;gbkey=Gene;gene=MDV061;gene_biotype=protein_coding;locus_tag=MD5V_061;old_locus_tag=GaHV2Md5_gp061
+NC_002229.3	RefSeq	CDS	109813	111096	.	-	0	ID=cds55;Parent=gene56;Dbxref=Genbank:YP_001033977.1,GeneID:4811522;Name=YP_001033977.1;gbkey=CDS;gene=MDV061;product=transactivating tegument protein VP16;protein_id=YP_001033977.1
+NC_002229.3	RefSeq	region	109725	109730	.	-	.	ID=id56;Dbxref=GeneID:4811522;gbkey=polyA_signal;gene=MDV061
+NC_002229.3	RefSeq	gene	111142	112386	.	-	.	ID=gene57;Dbxref=GeneID:4811524;Name=MDV064;Note=core gene;gbkey=Gene;gene=MDV064;gene_biotype=protein_coding;locus_tag=MD5V_064;old_locus_tag=GaHV2Md5_gp063
+NC_002229.3	RefSeq	CDS	112099	112386	.	-	0	ID=cds56;Parent=gene57;Dbxref=Genbank:YP_001033979.1,GeneID:4811524;Name=YP_001033979.1;gbkey=CDS;gene=MDV064;product=envelope glycoprotein N;protein_id=YP_001033979.1
+NC_002229.3	RefSeq	gene	111142	111953	.	-	.	ID=gene58;Dbxref=GeneID:4811523;Name=MDV062;Note=alpha gene;gbkey=Gene;gene=MDV062;gene_biotype=protein_coding;locus_tag=MD5V_062;old_locus_tag=GaHV2Md5_gp062
+NC_002229.3	RefSeq	CDS	111204	111953	.	-	0	ID=cds57;Parent=gene58;Dbxref=Genbank:YP_001033978.1,GeneID:4811523;Name=YP_001033978.1;gbkey=CDS;gene=MDV062;product=tegument protein VP22;protein_id=YP_001033978.1
+NC_002229.3	RefSeq	region	111142	111147	.	-	.	ID=id57;Dbxref=GeneID:4811523;Note=MDV062%2C MDV064;gbkey=polyA_signal
+NC_002229.3	RefSeq	gene	112366	113728	.	+	.	ID=gene59;Dbxref=GeneID:4811526;Name=MDV063;Note=core gene;gbkey=Gene;gene=MDV063;gene_biotype=protein_coding;locus_tag=MD5V_063;old_locus_tag=GaHV2Md5_gp064
+NC_002229.3	RefSeq	CDS	112366	113676	.	+	0	ID=cds58;Parent=gene59;Dbxref=Genbank:YP_001033980.1,GeneID:4811526;Name=YP_001033980.1;gbkey=CDS;gene=MDV063;product=deoxyuridine triphosphatase;protein_id=YP_001033980.1
+NC_002229.3	RefSeq	region	113723	113728	.	+	.	ID=id58;Dbxref=GeneID:4811526;gbkey=polyA_signal;gene=MDV063
+NC_002229.3	RefSeq	gene	113760	114513	.	-	.	ID=gene60;Dbxref=GeneID:4811525;Name=MDV065;Note=core gene;gbkey=Gene;gene=MDV065;gene_biotype=protein_coding;locus_tag=MD5V_065;old_locus_tag=GaHV2Md5_gp065
+NC_002229.3	RefSeq	CDS	113764	114513	.	-	0	ID=cds59;Parent=gene60;Dbxref=Genbank:YP_001033981.1,GeneID:4811525;Name=YP_001033981.1;gbkey=CDS;gene=MDV065;product=tegument protein UL51;protein_id=YP_001033981.1
+NC_002229.3	RefSeq	region	113760	113765	.	-	.	ID=id59;Dbxref=GeneID:4811525;gbkey=polyA_signal;gene=MDV065
+NC_002229.3	RefSeq	gene	114515	120441	.	+	.	ID=gene61;Dbxref=GeneID:4811527;Name=MDV066;Note=core gene;gbkey=Gene;gene=MDV066;gene_biotype=protein_coding;locus_tag=MD5V_066;old_locus_tag=GaHV2Md5_gp066
+NC_002229.3	RefSeq	CDS	114515	117739	.	+	0	ID=cds60;Parent=gene61;Dbxref=Genbank:YP_001033982.1,GeneID:4811527;Name=YP_001033982.1;gbkey=CDS;gene=MDV066;product=helicase-primase primase subunit;protein_id=YP_001033982.1
+NC_002229.3	RefSeq	gene	117718	120441	.	+	.	ID=gene62;Dbxref=GeneID:4811528;Name=MDV067;Note=alpha gene;gbkey=Gene;gene=MDV067;gene_biotype=protein_coding;locus_tag=MD5V_067;old_locus_tag=GaHV2Md5_gp067
+NC_002229.3	RefSeq	CDS	117718	118782	.	+	0	ID=cds61;Parent=gene62;Dbxref=Genbank:YP_001033983.1,GeneID:4811528;Name=YP_001033983.1;gbkey=CDS;gene=MDV067;product=envelope glycoprotein K;protein_id=YP_001033983.1
+NC_002229.3	RefSeq	gene	118929	120441	.	+	.	ID=gene63;Dbxref=GeneID:4811529;Name=MDV068;Note=core gene;gbkey=Gene;gene=MDV068;gene_biotype=protein_coding;locus_tag=MD5V_068;old_locus_tag=GaHV2Md5_gp068
+NC_002229.3	RefSeq	CDS	118929	120350	.	+	0	ID=cds62;Parent=gene63;Dbxref=Genbank:YP_001033984.1,GeneID:4811529;Name=YP_001033984.1;Note=MER family;gbkey=CDS;gene=MDV068;product=multifunctional expression regulator;protein_id=YP_001033984.1
+NC_002229.3	RefSeq	region	120422	120427	.	+	.	ID=id60;Dbxref=GeneID:4811529;Note=MDV066%2C MDV067%2C MDV068;gbkey=polyA_signal
+NC_002229.3	RefSeq	region	120432	120437	.	+	.	ID=id61;Dbxref=GeneID:4811529;Note=MDV066%2C MDV067%2C MDV068;gbkey=polyA_signal
+NC_002229.3	RefSeq	region	120436	120441	.	+	.	ID=id62;Dbxref=GeneID:4811529;Note=MDV066%2C MDV067%2C MDV068;gbkey=polyA_signal
+NC_002229.3	RefSeq	gene	120472	121289	.	-	.	ID=gene64;Dbxref=GeneID:4811530;Name=MDV069;gbkey=Gene;gene=MDV069;gene_biotype=protein_coding;locus_tag=MD5V_069;old_locus_tag=GaHV2Md5_gp069
+NC_002229.3	RefSeq	CDS	120480	121289	.	-	0	ID=cds63;Parent=gene64;Dbxref=Genbank:YP_001033985.1,GeneID:4811530;Name=YP_001033985.1;Note=LORF4 family;gbkey=CDS;gene=MDV069;product=protein LORF4;protein_id=YP_001033985.1
+NC_002229.3	RefSeq	region	120472	120477	.	-	.	ID=id63;Dbxref=GeneID:4811530;gbkey=polyA_signal;gene=MDV069
+NC_002229.3	RefSeq	gene	121457	122039	.	+	.	ID=gene65;Dbxref=GeneID:4811531;Name=MDV070;gbkey=Gene;gene=MDV070;gene_biotype=protein_coding;locus_tag=MD5V_070;old_locus_tag=GaHV2Md5_gp070
+NC_002229.3	RefSeq	CDS	121457	121957	.	+	0	ID=cds64;Parent=gene65;Dbxref=Genbank:YP_001033986.1,GeneID:4811531;Name=YP_001033986.1;gbkey=CDS;gene=MDV070;product=nuclear protein UL55;protein_id=YP_001033986.1
+NC_002229.3	RefSeq	region	121953	121958	.	+	.	ID=id64;Dbxref=GeneID:4811531;gbkey=polyA_signal;gene=MDV070
+NC_002229.3	RefSeq	region	121957	121962	.	+	.	ID=id65;Dbxref=GeneID:4811531;gbkey=polyA_signal;gene=MDV070
+NC_002229.3	RefSeq	region	122034	122039	.	+	.	ID=id66;Dbxref=GeneID:4811531;gbkey=polyA_signal;gene=MDV070
+NC_002229.3	RefSeq	gene	121999	126241	.	-	.	ID=gene66;Dbxref=GeneID:4811533;Name=MDV072;gbkey=Gene;gene=MDV072;gene_biotype=protein_coding;locus_tag=MD5V_072;old_locus_tag=GaHV2Md5_gp072
+NC_002229.3	RefSeq	CDS	123530	126241	.	-	0	ID=cds65;Parent=gene66;Dbxref=Genbank:YP_001033988.1,GeneID:4811533;Name=YP_001033988.1;gbkey=CDS;gene=MDV072;product=protein LORF5;protein_id=YP_001033988.1
+NC_002229.3	RefSeq	gene	121999	122897	.	-	.	ID=gene67;Dbxref=GeneID:4811532;Name=MDV071;gbkey=Gene;gene=MDV071;gene_biotype=protein_coding;locus_tag=MD5V_071;old_locus_tag=GaHV2Md5_gp071
+NC_002229.3	RefSeq	CDS	122313	122897	.	-	0	ID=cds66;Parent=gene67;Dbxref=Genbank:YP_001033987.1,GeneID:4811532;Name=YP_001033987.1;gbkey=CDS;gene=MDV071;product=myristylated tegument protein CIRC;protein_id=YP_001033987.1
+NC_002229.3	RefSeq	region	121999	122004	.	-	.	ID=id67;Dbxref=GeneID:4811532;Note=MDV071%2C MDV072;gbkey=polyA_signal
+NC_002229.3	RefSeq	direct_repeat	123059	123814	.	+	.	ID=id68;Note=1 copy of a 495 bp repeat plus a partial copy of 261 bp;gbkey=repeat_region;rpt_type=direct
+NC_002229.3	RefSeq	gene	126421	127787	.	-	.	ID=gene68;Dbxref=GeneID:4811534;Name=MDV073;gbkey=Gene;gene=MDV073;gene_biotype=protein_coding;locus_tag=MD5V_073;old_locus_tag=GaHV2Md5_gp073
+NC_002229.3	RefSeq	CDS	126915	127787	.	-	0	ID=cds67;Parent=gene68;Dbxref=Genbank:YP_001033989.1,GeneID:4811534;Name=YP_001033989.1;Note=pp38 family;gbkey=CDS;gene=MDV073;product=protein pp38;protein_id=YP_001033989.1
+NC_002229.3	RefSeq	gene	126421	126823	.	-	.	ID=gene69;Dbxref=GeneID:5291090;Name=MDV072.5;Note=alpha gene;gbkey=Gene;gene=MDV072.5;gene_biotype=protein_coding;locus_tag=MD5V_072.5
+NC_002229.3	RefSeq	CDS	126443	126823	.	-	0	ID=cds68;Parent=gene69;Dbxref=Genbank:YP_001294937.1,GeneID:5291090;Name=YP_001294937.1;Note=UL56 family;gbkey=CDS;gene=MDV072.5;product=membrane protein UL56;protein_id=YP_001294937.1
+NC_002229.3	RefSeq	region	126421	126426	.	-	.	ID=id69;Dbxref=GeneID:5291090;Note=MDV072.5%2C MDV073;gbkey=polyA_signal
+NC_002229.3	RefSeq		127592	141619	.	+	.	ID=id70;Note=IRL%3B inverted repeat flanking UL%3B CDS features are particular uncertain%2C and only strong candidates are annotated;gbkey=repeat_region
+NC_002229.3	RefSeq	sequence_feature	128228	128575	.	+	.	ID=id71;Note=originally annotated as hypothetical protein CDS;gbkey=misc_feature
+NC_002229.3	RefSeq	stem_loop	128262	128324	.	+	.	ID=id72;Note=ori palindrome;gbkey=stem_loop
+NC_002229.3	RefSeq	sequence_feature	128473	128515	.	+	.	ID=id73;Note=originally annotated as 14 kDa lytic phase protein CDS using 5'-terminal exon a;gbkey=misc_feature;part=1/2
+NC_002229.3	RefSeq	sequence_feature	130901	131115	.	+	.	ID=id73;Note=originally annotated as 14 kDa lytic phase protein CDS using 5'-terminal exon a;gbkey=misc_feature;part=2/2
+NC_002229.3	RefSeq	sequence_feature	129799	129865	.	+	.	ID=id74;Note=originally annotated as 14 kDa lytic phase protein CDS using 5'-terminal exon b;gbkey=misc_feature;part=1/2
+NC_002229.3	RefSeq	sequence_feature	130901	131115	.	+	.	ID=id74;Note=originally annotated as 14 kDa lytic phase protein CDS using 5'-terminal exon b;gbkey=misc_feature;part=2/2
+NC_002229.3	RefSeq	gene	134867	137276	.	+	.	ID=gene70;Dbxref=GeneID:4811549;Name=MDV076;gbkey=Gene;gene=MDV076;gene_biotype=protein_coding;locus_tag=MD5V_076;old_locus_tag=GaHV2Md5_gp076
+NC_002229.3	RefSeq	CDS	134867	135886	.	+	0	ID=cds69;Parent=gene70;Dbxref=Genbank:YP_001033993.1,GeneID:4811549;Name=YP_001033993.1;gbkey=CDS;gene=MDV076;product=oncoprotein MEQ;protein_id=YP_001033993.1
+NC_002229.3	RefSeq	region	137271	137276	.	+	.	ID=id75;Dbxref=GeneID:4811549;gbkey=polyA_signal;gene=MDV076
+NC_002229.3	RefSeq	sequence_feature	135332	135742	.	-	.	ID=id76;Note=originally annotated as 23 kD nuclear protein CDS;gbkey=misc_feature
+NC_002229.3	RefSeq	gene	137441	137902	.	+	.	ID=gene71;Dbxref=GeneID:5291095;Name=RLORF4;gbkey=Gene;gene=RLORF4;gene_biotype=protein_coding;locus_tag=MD5V_gp2
+NC_002229.3	RefSeq	CDS	137441	137869	.	+	0	ID=cds70;Parent=gene71;Dbxref=Genbank:YP_001294938.1,GeneID:5291095;Name=YP_001294938.1;gbkey=CDS;gene=RLORF4;product=protein RLORF4;protein_id=YP_001294938.1
+NC_002229.3	RefSeq	region	137897	137902	.	+	.	ID=id77;Dbxref=GeneID:5291095;gbkey=polyA_signal;gene=RLORF4
+NC_002229.3	RefSeq	gene	138065	138767	.	+	.	ID=gene72;Dbxref=GeneID:4811462;Name=MDV078;gbkey=Gene;gene=MDV078;gene_biotype=protein_coding;locus_tag=MD5V_078;old_locus_tag=GaHV2Md5_gp078
+NC_002229.3	RefSeq	CDS	138065	138128	.	+	0	ID=cds71;Parent=gene72;Dbxref=Genbank:YP_001033995.1,GeneID:4811462;Name=YP_001033995.1;gbkey=CDS;gene=MDV078;product=CxC chemokine;protein_id=YP_001033995.1
+NC_002229.3	RefSeq	CDS	138304	138439	.	+	2	ID=cds71;Parent=gene72;Dbxref=Genbank:YP_001033995.1,GeneID:4811462;Name=YP_001033995.1;gbkey=CDS;gene=MDV078;product=CxC chemokine;protein_id=YP_001033995.1
+NC_002229.3	RefSeq	CDS	138538	138742	.	+	1	ID=cds71;Parent=gene72;Dbxref=Genbank:YP_001033995.1,GeneID:4811462;Name=YP_001033995.1;gbkey=CDS;gene=MDV078;product=CxC chemokine;protein_id=YP_001033995.1
+NC_002229.3	RefSeq	region	138762	138767	.	+	.	ID=id78;Dbxref=GeneID:4811462;gbkey=polyA_signal;gene=MDV078
+NC_002229.3	RefSeq	sequence_feature	139142	139738	.	+	.	ID=id79;Note=originally annotated as Arg-rich protein CDS;gbkey=misc_feature
+NC_002229.3	RefSeq	sequence_feature	139444	140103	.	-	.	ID=id80;Note=originally annotated as hypothetical protein CDS;gbkey=misc_feature
+NC_002229.3	RefSeq	gene	139502	139944	.	-	.	ID=gene73;Dbxref=GeneID:5291094;Name=vTR;gbkey=Gene;gene=vTR;gene_biotype=misc_RNA;locus_tag=MD5V_gs2
+NC_002229.3	RefSeq	transcript	139502	139944	.	-	.	ID=rna1;Parent=gene73;Dbxref=GeneID:5291094;gbkey=misc_RNA;gene=vTR;product=telomerase RNA subunit
+NC_002229.3	RefSeq	exon	139502	139944	.	-	.	ID=id81;Parent=rna1;Dbxref=GeneID:5291094;gbkey=misc_RNA;gene=vTR;product=telomerase RNA subunit
+NC_002229.3	RefSeq	direct_repeat	140358	140397	.	+	.	ID=id82;Note=6 copies of a 6 nuc repeat plus a partial copy of 4 nuc;gbkey=repeat_region;rpt_type=direct
+NC_002229.3	RefSeq		140570	153798	.	+	.	ID=id83;Note=IRS%3B inverted repeat flanking US;gbkey=repeat_region
+NC_002229.3	RefSeq		140570	141619	.	+	.	ID=id84;Note='a' sequence;gbkey=repeat_region
+NC_002229.3	RefSeq	direct_repeat	140658	141037	.	+	.	ID=id85;Note=telomeric repeat region (mTMR)%3B 62 copies of a degenerate 6-7 nuc repeat plus a partial copy of 3 nuc;gbkey=repeat_region;rpt_type=direct
+NC_002229.3	RefSeq	direct_repeat	141102	141533	.	+	.	ID=id86;Note=7 copies of a 60 nuc repeat plus a partial copy of 12 nuc;gbkey=repeat_region;rpt_type=direct
+NC_002229.3	RefSeq	gene	143796	150769	.	-	.	ID=gene74;Dbxref=GeneID:4811547;Name=MDV084;Note=alpha gene;gbkey=Gene;gene=MDV084;gene_biotype=protein_coding;locus_tag=MD5V_084;old_locus_tag=GaHV2Md5_gp083
+NC_002229.3	RefSeq	CDS	143804	150769	.	-	0	ID=cds72;Parent=gene74;Dbxref=Genbank:YP_001034000.1,GeneID:4811547;Name=YP_001034000.1;gbkey=CDS;gene=MDV084;product=transcriptional regulator ICP4;protein_id=YP_001034000.1
+NC_002229.3	RefSeq	region	143796	143801	.	-	.	ID=id87;Dbxref=GeneID:4811547;gbkey=polyA_signal;gene=MDV084
+NC_002229.3	RefSeq	gene	153443	155683	.	+	.	ID=gene75;Dbxref=GeneID:4811542;Name=MDV087;gbkey=Gene;gene=MDV087;gene_biotype=protein_coding;locus_tag=MD5V_087;old_locus_tag=GaHV2Md5_gp087
+NC_002229.3	RefSeq	CDS	153443	153982	.	+	0	ID=cds73;Parent=gene75;Dbxref=Genbank:YP_001034004.1,GeneID:4811542;Name=YP_001034004.1;Note=SORF2 family;gbkey=CDS;gene=MDV087;product=protein SORF2;protein_id=YP_001034004.1
+NC_002229.3	RefSeq	sequence_feature	153799	164645	.	+	.	ID=id88;Note=US;gbkey=misc_feature
+NC_002229.3	RefSeq	gene	154149	155683	.	+	.	ID=gene76;Dbxref=GeneID:4811543;Name=MDV088;gbkey=Gene;gene=MDV088;gene_biotype=protein_coding;locus_tag=MD5V_088;old_locus_tag=GaHV2Md5_gp088
+NC_002229.3	RefSeq	CDS	154149	154688	.	+	0	ID=cds74;Parent=gene76;Dbxref=Genbank:YP_001034005.1,GeneID:4811543;Name=YP_001034005.1;gbkey=CDS;gene=MDV088;product=regulatory protein ICP22;protein_id=YP_001034005.1
+NC_002229.3	RefSeq	gene	154978	155683	.	+	.	ID=gene77;Dbxref=GeneID:4811465;Name=MDV089;Note=alpha gene;gbkey=Gene;gene=MDV089;gene_biotype=protein_coding;locus_tag=MD5V_089;old_locus_tag=GaHV2Md5_gp089
+NC_002229.3	RefSeq	CDS	154978	155619	.	+	0	ID=cds75;Parent=gene77;Dbxref=Genbank:YP_001034006.1,GeneID:4811465;Name=YP_001034006.1;gbkey=CDS;gene=MDV089;product=virion protein US10;protein_id=YP_001034006.1
+NC_002229.3	RefSeq	region	155678	155683	.	+	.	ID=id89;Dbxref=GeneID:4811465;Note=MDV087%2C MDV088%2C MDV089;gbkey=polyA_signal
+NC_002229.3	RefSeq	gene	155686	157824	.	-	.	ID=gene78;Dbxref=GeneID:4811450;Name=MDV091;Note=alpha gene;gbkey=Gene;gene=MDV091;gene_biotype=protein_coding;locus_tag=MD5V_091;old_locus_tag=GaHV2Md5_gp091
+NC_002229.3	RefSeq	CDS	157012	157824	.	-	0	ID=cds76;Parent=gene78;Dbxref=Genbank:YP_001034008.1,GeneID:4811450;Name=YP_001034008.1;gbkey=CDS;gene=MDV091;product=virion protein US2;protein_id=YP_001034008.1
+NC_002229.3	RefSeq	gene	155686	156785	.	-	.	ID=gene79;Dbxref=GeneID:4811449;Name=MDV090;gbkey=Gene;gene=MDV090;gene_biotype=protein_coding;locus_tag=MD5V_090;old_locus_tag=GaHV2Md5_gp090
+NC_002229.3	RefSeq	CDS	155730	156785	.	-	0	ID=cds77;Parent=gene79;Dbxref=Genbank:YP_001034007.1,GeneID:4811449;Name=YP_001034007.1;gbkey=CDS;gene=MDV090;product=protein SORF3;protein_id=YP_001034007.1
+NC_002229.3	RefSeq	region	155686	155691	.	-	.	ID=id90;Dbxref=GeneID:4811449;Note=MDV090%2C MDV091;gbkey=polyA_signal
+NC_002229.3	RefSeq	gene	157936	159810	.	+	.	ID=gene80;Dbxref=GeneID:4811451;Name=MDV092;Note=alpha gene;gbkey=Gene;gene=MDV092;gene_biotype=protein_coding;locus_tag=MD5V_092;old_locus_tag=GaHV2Md5_gp092
+NC_002229.3	RefSeq	CDS	157936	159144	.	+	0	ID=cds78;Parent=gene80;Dbxref=Genbank:YP_001034009.1,GeneID:4811451;Name=YP_001034009.1;Note=PK family;gbkey=CDS;gene=MDV092;product=serine/threonine protein kinase US3;protein_id=YP_001034009.1
+NC_002229.3	RefSeq	gene	159254	159810	.	+	.	ID=gene81;Dbxref=GeneID:4811452;Name=MDV093;gbkey=Gene;gene=MDV093;gene_biotype=protein_coding;locus_tag=MD5V_093;old_locus_tag=GaHV2Md5_gp093
+NC_002229.3	RefSeq	CDS	159254	159697	.	+	0	ID=cds79;Parent=gene81;Dbxref=Genbank:YP_001034010.1,GeneID:4811452;Name=YP_001034010.1;gbkey=CDS;gene=MDV093;product=protein SORF4;protein_id=YP_001034010.1
+NC_002229.3	RefSeq	region	159805	159810	.	+	.	ID=id91;Dbxref=GeneID:4811452;Note=MDV092%2C MDV093;gbkey=polyA_signal
+NC_002229.3	RefSeq	gene	159865	164095	.	+	.	ID=gene82;Dbxref=GeneID:4811453;Name=MDV094;Note=alpha gene;gbkey=Gene;gene=MDV094;gene_biotype=protein_coding;locus_tag=MD5V_094;old_locus_tag=GaHV2Md5_gp094
+NC_002229.3	RefSeq	CDS	159919	161076	.	+	0	ID=cds80;Parent=gene82;Dbxref=Genbank:YP_001034011.2,GeneID:4811453;Name=YP_001034011.2;Note=gD family;gbkey=CDS;gene=MDV094;product=envelope glycoprotein D;protein_id=YP_001034011.2
+NC_002229.3	RefSeq	gene	161183	164095	.	+	.	ID=gene83;Dbxref=GeneID:4811454;Name=MDV095;Note=alpha gene;gbkey=Gene;gene=MDV095;gene_biotype=protein_coding;locus_tag=MD5V_095;old_locus_tag=GaHV2Md5_gp095
+NC_002229.3	RefSeq	CDS	161183	162250	.	+	0	ID=cds81;Parent=gene83;Dbxref=Genbank:YP_001034012.1,GeneID:4811454;Name=YP_001034012.1;Note=gD family;gbkey=CDS;gene=MDV095;product=envelope glycoprotein I;protein_id=YP_001034012.1
+NC_002229.3	RefSeq	gene	162389	164095	.	+	.	ID=gene84;Dbxref=GeneID:4811455;Name=MDV096;Note=alpha gene;gbkey=Gene;gene=MDV096;gene_biotype=protein_coding;locus_tag=MD5V_096;old_locus_tag=GaHV2Md5_gp096
+NC_002229.3	RefSeq	CDS	162389	163882	.	+	0	ID=cds82;Parent=gene84;Dbxref=Genbank:YP_001034013.1,GeneID:4811455;Name=YP_001034013.1;Note=gE family;gbkey=CDS;gene=MDV096;product=envelope glycoprotein E;protein_id=YP_001034013.1
+NC_002229.3	RefSeq	region	163941	163946	.	+	.	ID=id92;Dbxref=GeneID:4811455;gbkey=polyA_signal;gene=MDV096
+NC_002229.3	RefSeq	region	164090	164095	.	+	.	ID=id93;Dbxref=GeneID:4811455;Note=MDV094%2C MDV095%2C MDV096;gbkey=polyA_signal
+NC_002229.3	RefSeq	gene	164412	165001	.	-	.	ID=gene85;Dbxref=GeneID:4811456;Name=MDV097;gbkey=Gene;gene=MDV097;gene_biotype=protein_coding;locus_tag=MD5V_097;old_locus_tag=GaHV2Md5_gp097
+NC_002229.3	RefSeq	CDS	164552	165001	.	-	0	ID=cds83;Parent=gene85;Dbxref=Genbank:YP_001034014.1,GeneID:4811456;Name=YP_001034014.1;Note=SORF2 family;gbkey=CDS;gene=MDV097;product=protein SORF2A;protein_id=YP_001034014.1
+NC_002229.3	RefSeq	region	164412	164417	.	-	.	ID=id94;Dbxref=GeneID:4811456;gbkey=polyA_signal;gene=MDV097
+NC_002229.3	RefSeq		164646	177874	.	+	.	ID=id95;Note=TRS%3B inverted repeat flanking US;gbkey=repeat_region
+NC_002229.3	RefSeq	gene	167675	174648	.	+	.	ID=gene86;Dbxref=GeneID:4811466;Name=MDV100;Note=alpha gene;gbkey=Gene;gene=MDV100;gene_biotype=protein_coding;locus_tag=MD5V_100;old_locus_tag=GaHV2Md5_gp101
+NC_002229.3	RefSeq	CDS	167675	174640	.	+	0	ID=cds84;Parent=gene86;Dbxref=Genbank:YP_001034018.1,GeneID:4811466;Name=YP_001034018.1;gbkey=CDS;gene=MDV100;product=transcriptional regulator ICP4;protein_id=YP_001034018.1
+NC_002229.3	RefSeq	region	174643	174648	.	+	.	ID=id96;Dbxref=GeneID:4811466;gbkey=polyA_signal;gene=MDV100
+NC_002229.3	RefSeq		176825	177874	.	+	.	ID=id97;Note='a' sequence;gbkey=repeat_region
+NC_002229.3	RefSeq	direct_repeat	176911	177342	.	+	.	ID=id98;Note=7 copies of a 60 nuc repeat plus a partial copy of 12 nuc;gbkey=repeat_region;rpt_type=direct
+NC_002229.3	RefSeq	direct_repeat	177407	177786	.	+	.	ID=id99;Note=telomeric repeat region (mTMR)%3B 62 copies of a degenerate 6-7 nuc repeat plus a partial copy of 3 nuc;gbkey=repeat_region;rpt_type=direct
