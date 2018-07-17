@@ -1,0 +1,32 @@
+<h1 id="single-cell-sequencing-in-gallus-gallus-splenocytes-infected-with-mareks-disease-virus-mdv">Single-cell Sequencing in <em>Gallus gallus</em> Splenocytes Infected with Marek's Disease Virus (MDV)</h1>
+<p>We collected splenocytes from spleens of line 6 and line 7 birds infected at hatch with 2000 pfu of MDV (strain JM102W) at 6 days of age. Splenocytes were seperated via Histopaque-1077 and underwent single cell RNA sequencing (100bp paired-end reads) via Illumina NextSeq (10X Chromium 3-prime library kit) at the Van Andel Institute Genomics Core. FASTQ files were prepared with the 10X Single cell cellranger mkfastq software. We recieved data on April 14, 2018. Project designed and implemented by the Hans Cheng Lab (Hans.Cheng@ars.usda.gov). Sequencing performed under the supervision of Marie Adams (marie.adams@vai.org).</p>
+<h2 id="sequencing-files">Sequencing Files</h2>
+<p>All raw FASTQ sequences are in <code>outs/fastq_path</code></p>
+<pre><code>    $ find outs/fastq_path -name &quot;*.fastq.gz&quot;
+    outs/fastq_path/61C_S7_L001_I1_001.fastq.gz
+    outs/fastq_path/61C_S7_L001_R1_001.fastq.gz
+    outs/fastq_path/61C_S7_L001_R2_001.fastq.gz
+    outs/fastq_path/61C_S7_L001_R2_001.fastq.gz</code></pre>
+<h2 id="file-nomenclature">File Nomenclature</h2>
+<p>Samplesheet path: <code>outs/input_samplesheet.csv</code></p>
+<p><code>63C_S9_L002_R1_001.fastq.gz</code><br />
+<code>LineBirdnumberInfected_Samplenumber_Lane_Read_additionalID.fastq.gz</code></p>
+<p><code>6</code>: Bird line (e.g. Line 6)<br />
+<code>3</code>: Bird number (e.g. Bird 3)<br />
+<code>C</code>: Whether a bird was infected or control (e.g. Control)<br />
+<code>S9</code>: Sample number (e.g. Sample 9)<br />
+<code>L002</code>: Lane (e.g. Lane 2)<br />
+<code>R1</code>: Read (e.g. Read 1)</p>
+<p>Files labeled as &quot;Undetermined&quot; were not properly binned to appropriate samples</p>
+<h2 id="quality-control">Quality Control</h2>
+<p>&quot;Overall, the sequencing data looks very good from a technical perspective; each library has between 150-200M reads that passed QC, with 90% of the bases having quality scores of 30 or better.&quot; ~Van Andel Institute Genomics Core</p>
+<p>FastQC reports: <code>outs/fastq_path/FastQC</code><br />
+Multiqc_data: <code>outs/fastq_path/multiqc_data</code></p>
+<h2 id="data-integrity">Data Integrity</h2>
+<p>MD5 file path: <code>outs/fastq_path/CHEH_20180306_10XscRNA.md5</code></p>
+<p>To perform an MD5 check, in directory <code>outs/fastq_path/</code></p>
+<pre><code>    $ md5sum -c CHEH_20180306_10XscRNA.md5
+    61C_S7_L001_I1_001.fastq.gz: OK
+    61C_S7_L001_R1_001.fastq.gz: OK
+    61C_S7_L001_R2_001.fastq.gz: OK
+    61C_S7_L002_I1_001.fastq.gz: OK</code></pre>
