@@ -1,0 +1,485 @@
+#===============================================================================
+#
+#         FILE: /Users/Alec/Documents/Bioinformatics/MDV_Project/scRNA_splenocytes/scRNA_splenocytes_main_documentation.txt
+#
+#        USAGE: Simply a documentation script, analysis inside
+#
+#  DESCRIPTION:  This script serves as a step by step documentation script and development script for the analysis of single cell RNASeq profiles captured from splenocytes
+# REQUIREMENTS:  None
+#        NOTES:  ---
+#       AUTHOR:  Alec Steep, steepale@msu.edu
+#  AFFILIATION:  Michigan State University (MSU), East Lansing, MI, United States
+#				         USDA ARS Avian Disease and Oncology Lab (ADOL), East Lansing, MI, United States
+#				         Technical University of Munich (TUM), Weihenstephan, Germany
+#      VERSION:  1.0
+#      CREATED:  2018.06.27
+#     REVISION:  
+#===============================================================================
+
+# Permanent PROJECT DIRECTORY (MSU HPCC)
+# /mnt/research/ADOL/Cheng-Lab-Data/common/scRNA_splenocytes
+# Archived on MSU's HPCC in ADOL research directory: /mnt/research/ADOL/Cheng-Lab-Data/archive/20180418_Hearn_SC
+
+cd /mnt/research/ADOL/Cheng-Lab-Data/common/scRNA_splenocytes
+
+# Make directories
+mkdir -p ./{data,scripts,analysis,plots,archive,job_reports}
+mkdir ./data/fastqc_post_trim
+mkdir ./data/trimmed
+mkdir ./data/fastqc_pre_trim
+mkdir ./data/trimmed/reports
+mkdir ./data/raw_fastq
+mkdir ./galgal5_MDV_cellranger_count
+# For documentation of experiment and data, see ./archive/H7T2LDMXX/README.html
+
+# Objective: This experiment was not designed for this analysis, however, I will mine this data to look for aberations to
+# Ikaros expression and for mutations. If I'm lucky and they exist, then I'll have a single cell expression profile of cells
+# with an Ikaros abberation.
+
+# Computational analysis of scRNA based on: 
+# http://hemberg-lab.github.io/scRNA.seq.course/processing-raw-scrna-seq-data.html
+# https://support.10xgenomics.com/single-cell-gene-expression
+
+# First, install the cell ranger software. Additional analyses are needed to contruct appropriate files
+# These files will be installed on MSU's HPCC
+cd /mnt/home/steepale/Apps
+
+# Download cell ranger version 2.1.1
+wget -O cellranger-2.1.1.tar.gz "http://cf.10xgenomics.com/releases/cell-exp/cellranger-2.1.1.tar.gz?Expires=1531146784&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cDovL2NmLjEweGdlbm9taWNzLmNvbS9yZWxlYXNlcy9jZWxsLWV4cC9jZWxscmFuZ2VyLTIuMS4xLnRhci5neiIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTUzMTE0Njc4NH19fV19&Signature=mpGetX7yICQn7vKwslXAZg5ExJe0I5aEc2zuhVFIDEF7QY5bSS3ZWvE599ke2vw62Tf6-Kuv-DcailNNJVwbx7xar8T~uZSlocW7vBkOXAn3ORBdiLJYdCci-YaAhzlfHY1G3oXw76CUFJQHsWJo07sFCL79GASRl4N4aZLI7Sgap25lgCwnu3lugXBAbfPduAcedpG3h8cv9Ow7274Hqyp8LC7ig7qYkdYaFufF56mGeok8S60HOXIwp3YiyYokKoNf8JSE0NNReKTRHE61qF~0B02PX5XqF1h6ZXlWmjhctyAy71b92z5VbczgXz8fypz-c9lw331nBNELqCzZEQ__&Key-Pair-Id=APKAI7S6A5RYOXBWRPDA"
+tar -xzvf cellranger-2.1.1.tar.gz
+
+# Download the human reference genome for testrun
+wget http://cf.10xgenomics.com/supp/cell-exp/refdata-cellranger-GRCh38-1.2.0.tar.gz
+tar -xzvf refdata-cellranger-GRCh38-1.2.0.tar.gz
+
+# Perform a test run of cell ranger
+cellranger testrun --id=steepale
+
+cd /Users/Alec/Documents/Bioinformatics/MDV_Project/scRNA_splenocytes
+# Subset the fastq files
+# The fastq files seem to be in the same order on manual inspection
+zcat ./archive/H7T2LDMXX/outs/fastq_path/61C_S7_L001_R1_001.fastq.gz | grep "^@" | head
+#@A00426:11:H7T2LDMXX:1:1101:1425:1016 1:N:0:GGTATGCA
+#@A00426:11:H7T2LDMXX:1:1101:2347:1016 1:N:0:GGTATGCA
+#@A00426:11:H7T2LDMXX:1:1101:2871:1016 1:N:0:GGTATGCA
+#@A00426:11:H7T2LDMXX:1:1101:3812:1016 1:N:0:GGTATGCA
+zcat ./archive/H7T2LDMXX/outs/fastq_path/61C_S7_L001_R2_001.fastq.gz | grep "^@" | head
+#@A00426:11:H7T2LDMXX:1:1101:1425:1016 2:N:0:GGTATGCA
+#@A00426:11:H7T2LDMXX:1:1101:2347:1016 2:N:0:GGTATGCA
+#@A00426:11:H7T2LDMXX:1:1101:2871:1016 2:N:0:GGTATGCA
+#@A00426:11:H7T2LDMXX:1:1101:3812:1016 2:N:0:GGTATGCA
+
+### Prepare a reference chicken + MDV genome for cellranger count
+#reference file downloaded may 10th, 2018 from ensembl
+cp /mnt/research/ADOL/OutsideCollaborations/20160201_Cheng_Steep_Xu_Zhang/RNA_DE/data/ref/ensembl/pub/release-92/fasta/gallus_gallus/dna/Gallus_gallus.Gallus_gallus-5.0.dna.toplevel.fa \
+./data/Gallus_gallus.Gallus_gallus-5.0.dna.toplevel.fa
+# GTF file downloaded may 10th, 2018 from ensembl
+cp /mnt/research/ADOL/OutsideCollaborations/20160201_Cheng_Steep_Xu_Zhang/RNA_DE/data/ref/ensembl/pub/release-92/gtf/gallus_gallus/Gallus_gallus.Gallus_gallus-5.0.92.gtf \
+./data/Gallus_gallus.Gallus_gallus-5.0.92.gtf
+
+# Collect the MDV reference genome and gtf file
+# MDV Genome collected from https://www-ncbi-nlm-nih-gov.proxy1.cl.msu.edu/nuccore/NC_002229.3
+# Could only collect a gff3 file for MDV genome, so we will convert this to a gtf file with cufflinks
+# Useful info: 
+# http://blog.nextgenetics.net/?e=27
+# http://ccb.jhu.edu/software/stringtie/gff.shtml
+## Convert the gff3 file to a gtf file (with cufflinks version 2.2.1)
+## Examine the gtf file conversion and see of there are potential errors with gffread
+module load cufflinks/2.2.1
+gffread -E annotation.gtf -o- | less
+gffread -E annotation.gff -T -o- | more # -E stands for potential errors -T stands for gtf format as output
+# I have made the conclusion that perhaps a custom script is best
+# However, if you wanted to convert a gff3 to a gtf, this is how you'd do it
+gffread \
+./data/gallid_herpesvirus_2_genomic.gff3 \
+-T \
+-o ./data/gallid_herpesvirus_2_genomic.gtf # Don't do it... just don't.
+
+# Instead, perform a custom conversion. Note: exon_ids are insufficient. Manual annotation may be necessary.
+python ./scripts/MDV_gff3_to_gtf.py \
+./data/gallid_herpesvirus_2_genomic.gff3 \
+./data/gallid_herpesvirus_2_genomic.gtf
+
+# ./scripts/MDV_gff3_to_gtf.py
+######################################################
+import os
+import sys
+
+infile = sys.argv[1]
+outfile = open(sys.argv[2], 'w')
+
+# The gff3 and gtf files are conveniently ordered by feature as 
+# gene, transcript, exon, cds or some subset but always in that hierarchy
+
+# Variables
+keeps = ('gene','transcript','exon','CDS')
+
+# Make one pass and construct a dictionary
+# The gene ID's or parent ID's will be the keys, and the values will be lists
+for line in open(infile):
+	if line.startswith("##"):
+		outfile.write(line)
+	if not line.startswith("#"):
+		col = line.rstrip().split('\t')
+		CHROM = col[0]
+		ANNO = col[1]
+		FEATURE = col[2]
+		START = col[3]
+		END = col[4]
+		SCORE = col[5]
+		STRAND = col[6]
+		FRAME = col[7]
+		ATTR = col[8]
+		# Only collect attributes for genes and features associated with genes
+		if FEATURE in keeps:
+			if FEATURE == 'gene':
+				# When a new gene is encountered, reset all variables
+				gene_id,gene_source,gene_biotype,gene_name,transcript_id,transcript_source,transcript_biotype,exon_id,protein_id = ["NA"] * 9
+				# Assign: gene_id, gene_biotype, gene_name, gene_source
+				gene_id = ATTR.split('Dbxref=GeneID:')[1].split(';')[0] # Absolute
+				gene_source = ANNO # Absolute
+				gene_biotype = ATTR.split('gene_biotype=')[1].split(';')[0] # Absolute
+				gene_name = ATTR.split('gene=')[1].split(';')[0] # Conditional
+				if gene_name != "NA": # If gene_name is assigned
+					GENE_ATTR = 'gene_id "'+gene_id+'"; '+'gene_source "'+gene_source+'"; '+'gene_biotype "'+gene_biotype+'"; '+'gene_name "'+gene_name+'";'
+				elif gene_name == "NA": # If gene_name is not assigned
+					GENE_ATTR = 'gene_id "'+gene_id+'"; '+'gene_source "'+gene_source+'"; '+'gene_biotype "'+gene_biotype+'";'
+				outfile.write('\t'.join([CHROM,ANNO,FEATURE,START,END,SCORE,STRAND,FRAME,GENE_ATTR])+'\n')
+			elif FEATURE == 'transcript':
+				# Assign: transcript_id, Parent, transcript_source
+				transcript_id = ATTR.split('ID=')[1].split(';')[0]
+				transcript_source = ANNO
+				transcript_biotype = gene_biotype # There is no transcript biotype annotation in MDV gff3 file, so we will use gene
+				# Absolutes: gene_id (1), transcript_id(2), gene_source(3), gene_biotype(4),transcript_source(5), transcript_biotype(6)
+				# Conditionals: gene_name(2.1)
+				if gene_name != "NA": # If gene_name is assigned
+					TRANS_ATTR = 'gene_id "'+gene_id+'"; '+'transcript_id "'+transcript_id+'"; '+'gene_name "'+gene_name+'"; '+'gene_source "'+gene_source+'"; '+'gene_biotype "'+gene_biotype+'"; '+'transcript_source "'+transcript_source+'"; '+'transcript_biotype "'+transcript_biotype+'";'
+				elif gene_name == "NA": # If gene_name is not assigned
+					TRANS_ATTR = 'gene_id "'+gene_id+'"; '+'transcript_id "'+transcript_id+'"; '+'gene_source "'+gene_source+'"; '+'gene_biotype "'+gene_biotype+'"; '+'transcript_source "'+transcript_source+'"; '+'transcript_biotype "'+transcript_biotype+'";'
+				outfile.write('\t'.join([CHROM,ANNO,FEATURE,START,END,SCORE,STRAND,FRAME,TRANS_ATTR])+'\n')
+			elif FEATURE == 'exon':
+				exon_id = ATTR.split('ID=')[1].split(';')[0]
+				# Absolutes: gene_id(1), transcript_id(2), gene_source(4), gene_biotype(5), transcript_source(6), transcript_biotype(7),exon_id(8)
+				# Conditionals: gene_name(3)
+				if gene_name != "NA": # If gene_name is assigned
+					EXON_ATTR = 'gene_id "'+gene_id+'"; '+'transcript_id "'+transcript_id+'"; '+'gene_name "'+gene_name+'"; '+'gene_source "'+gene_source+'"; '+'gene_biotype "'+gene_biotype+'"; '+'transcript_source "'+transcript_source+'"; '+'transcript_biotype "'+transcript_biotype+'"; '+'exon_id "'+exon_id+'";'
+				elif gene_name == "NA": # If gene_name is not assigned
+					EXON_ATTR = 'gene_id "'+gene_id+'"; '+'transcript_id "'+transcript_id+'"; '+'gene_source "'+gene_source+'"; '+'gene_biotype "'+gene_biotype+'"; '+'transcript_source "'+transcript_source+'"; '+'transcript_biotype "'+transcript_biotype+'"; '+'exon_id "'+exon_id+'";'
+				outfile.write('\t'.join([CHROM,ANNO,FEATURE,START,END,SCORE,STRAND,FRAME,EXON_ATTR])+'\n')
+			elif FEATURE == 'CDS':
+				# Absolutes: gene_id(1), transcript_id(2), gene_source(4), gene_biotype(5), transcript_source(6), transcript_biotype(7),protein_id(8),
+				# Conditionals: gene_name(3)
+				protein_id = ATTR.split('protein_id=')[1].split(';')[0]
+				if gene_name != "NA": # If gene_name is assigned
+					CDS_ATTR = 'gene_id "'+gene_id+'"; '+'transcript_id "'+transcript_id+'"; '+'gene_name "'+gene_name+'"; '+'gene_source "'+gene_source+'"; '+'gene_biotype "'+gene_biotype+'"; '+'transcript_source "'+transcript_source+'"; '+'transcript_biotype "'+transcript_biotype+'"; '+'protein_id "'+protein_id+'";'
+				elif gene_name == "NA": # If gene_name is not assigned
+					CDS_ATTR = 'gene_id "'+gene_id+'"; '+'transcript_id "'+transcript_id+'"; '+'gene_source "'+gene_source+'"; '+'gene_biotype "'+gene_biotype+'"; '+'transcript_source "'+transcript_source+'"; '+'transcript_biotype "'+transcript_biotype+'"; '+'protein_id "'+protein_id+'";'
+				outfile.write('\t'.join([CHROM,ANNO,FEATURE,START,END,SCORE,STRAND,FRAME,CDS_ATTR])+'\n')
+outfile.close()
+######################################################
+
+# Combine the chicken reference genome with the MDV reference genome
+cat \
+./data/Gallus_gallus.Gallus_gallus-5.0.dna.toplevel.fa \
+./data/gallid_herpesvirus_2_genomic.fa \
+> ./data/Gallus_gallus_5.0-ensembl_gallid_herpesvirus_2-refseq_genomic_combo.fa
+# Combine the chicken reference genome gtf file with the MDV reference genome gtf file
+(grep -h "^#" ./data/Gallus_gallus.Gallus_gallus-5.0.92.gtf ./data/gallid_herpesvirus_2_genomic.gtf;
+grep -h -v "^#" ./data/Gallus_gallus.Gallus_gallus-5.0.92.gtf ./data/gallid_herpesvirus_2_genomic.gtf) \
+> ./data/Gallus_gallus_5.0-ensembl_gallid_herpesvirus_2-refseq_genomic_combo.gtf
+
+# Filter the gtf file for genes of interest with mkgtf (will not do for now, may choose to come back and try)
+#cellranger mkgtf \
+#./data/Gallus_gallus.Gallus_gallus-5.0.92.gtf \
+#Gallus_gallus.Gallus_gallus-5.0.92_filtered.gtf \
+#--attribute=gene_biotype:
+
+# Index the gallus gallus genome with cellranger mkref
+qsub ./scripts/index_genome_mkref.sh
+
+# ./scripts/index_genome_mkref.sh
+##################################
+#!/bin/bash -login
+#PBS -l nodes=1:ppn=8,walltime=00:03:59:00,mem=40gb
+#PBS -j oe
+
+# working directory:
+cd /mnt/research/ADOL/Cheng-Lab-Data/common/scRNA_splenocytes
+
+cellranger mkref \
+--genome=galgal5 \
+--fasta=./data/Gallus_gallus.Gallus_gallus-5.0.dna.toplevel.fa \
+--genes=./data/Gallus_gallus.Gallus_gallus-5.0.92.gtf \
+--memgb=36 \
+--nthreads=8
+
+qstat -f ${PBS_JOBID}
+#################################
+
+# Index the chicken-MDV genome with cellranger mkref
+qsub ./scripts/index_chicken-MDV_genome_mkref.sh
+
+# ./scripts/index_chicken-MDV_genome_mkref.sh
+##################################
+#!/bin/bash -login
+#PBS -l nodes=1:ppn=1,walltime=00:03:59:00,mem=40gb
+#PBS -j oe
+
+# working directory:
+cd /mnt/research/ADOL/Cheng-Lab-Data/common/scRNA_splenocytes
+
+cellranger mkref \
+--genome=galgal5 \
+--fasta=./data/Gallus_gallus.Gallus_gallus-5.0.dna.toplevel.fa \
+--genes=./data/Gallus_gallus.Gallus_gallus-5.0.92.gtf \
+--genome=gallid_herpesvirus_2 \
+--fasta=./data/gallid_herpesvirus_2_genomic.fa \
+--genes=./data/gallid_herpesvirus_2_genomic.gtf \
+--memgb=36 \
+--nthreads=1
+
+qstat -f ${PBS_JOBID}
+#################################
+
+# Choose the first 100K reads in each file (Performed for troubleshooting purposes, not sure if these files remain)
+for fastq in `ls ./archive/H7T2LDMXX/outs/fastq_path/*001.fastq.gz`
+do
+echo ${fastq}
+out=`basename ${fastq} | sed 's/001.fastq.gz/001_100K.fastq/'`
+echo ${out}
+#zcat ${fastq} | sed -n 1,400000p > ./data/${out}
+done
+
+### Perform fastqc on untrimmed reads (No need, already done for us)
+#find './archive/H7T2LDMXX/outs/fastq_path/' -name '*R2_001.fastq.gz' |\
+#xargs -i basename {} | \
+#sed 's/_R2_001.fastq.gz//' | \
+#sort | uniq | \
+#xargs -i echo 'qsub ./scripts/fastqc_pre_trim.sh -v Var='{} |sh
+
+# ./scripts/fastqc_pre_trim.sh
+##################################
+#!/bin/bash -login
+#PBS -l nodes=1:ppn=1,walltime=00:03:59:00,mem=8gb
+#PBS -j oe
+
+# working directory:
+cd /mnt/research/ADOL/Cheng-Lab-Data/common/scRNA_splenocytes
+
+# Load appropriate modules
+module load FastQC/0.11.3
+
+fastqc \
+-o ./data/fastqc_pre_trim \
+./data/${Var}_R2_001_100K.fastq
+
+qstat -f ${PBS_JOBID}
+#################################
+
+### Trim reads (Trim Galore v0.5.0) (Again, no need, does not significantly improve reads. It was likely already done.)
+
+#find './archive/H7T2LDMXX/outs/fastq_path/' -name '*R2_001.fastq.gz'| \
+#sort | uniq | head -n1 | \
+#xargs -i echo 'qsub ./scripts/trim_galore.sh -v Var='{} |sh
+
+# ./scripts/trim_galore.sh
+##################################
+#!/bin/bash -login
+#PBS -l nodes=1:ppn=1,walltime=00:03:59:00,mem=8gb
+#PBS -j oe
+
+# working directory:
+cd /mnt/research/ADOL/Cheng-Lab-Data/common/scRNA_splenocytes
+
+# Load appropriate modules
+module load TrimGalore/0.3.3
+module load FastQC/0.11.3
+module load cutadapt/1.8.1
+
+trim_galore \
+--fastqc \
+--fastqc_args "--outdir ./data/fastqc_post_trim" \
+-o ./data/trimmed \
+${Var}
+
+qstat -f ${PBS_JOBID}
+#################################
+
+# Relocate all trimming report files
+#mv ./data/trimmed/*_report.txt ./data/trimmed/reports/
+
+# All the trimmmed R2 files need to be renamed
+#for f in `ls ./data/trimmed/*.fq`
+#do
+#id=`basename ${f} | cut -d'_' -f1`
+#sam=`basename ${f} | cut -d'_' -f2`
+#lane=`basename ${f} | cut -d'_' -f3`
+#r=`basename ${f} | cut -d'_' -f4`
+#end=`basename ${f} | cut -d'_' -f5`
+#f_new="./data/trimmed/${id}_${sam}_${lane}_${r}_${end}.fastq.gz"
+#echo ${f}
+#echo ${f_new}
+#gzip -c ${f} > ${f_new}
+#done
+
+# Copy all the r1 files into the proper directory
+#for f in `ls ./data/*_R1_001_100K.fastq`
+#do
+#id=`basename ${f} | cut -d'_' -f1`
+#sam=`basename ${f} | cut -d'_' -f2`
+#lane=`basename ${f} | cut -d'_' -f3`
+#r=`basename ${f} | cut -d'_' -f4`
+#end=`basename ${f} | cut -d'_' -f5`
+#f_new="./data/trimmed/${id}_${sam}_${lane}_${r}_${end}.fastq.gz"
+#echo ${f}
+#echo ${f_new}
+#gzip -c ${f} > ${f_new}
+#done
+
+# Move all the fastq files to a new folder (if run from archive folder (NOT THE ACTUAL ARCHIVE), the cellranger script bugs out)
+mv ./archive/H7T2LDMXX/outs/fastq_path/*_001.fastq.gz \
+./data/raw_fastq/
+
+# Change to a new directory so folders aren't overwritten
+cd ./galgal5_MDV_cellranger_count
+
+# Run cell ranger count
+find '../data/raw_fastq' -name '*_R2_001.fastq.gz' |\
+xargs -i basename {} | \
+sed 's/_L00[1-8]_R2_001.fastq.gz//' | \
+sort | uniq | \
+xargs -i echo 'qsub ../scripts/galgal5_MDV_cellranger_count.sh -v Var='{} |sh
+
+# ./scripts/cellranger_count.sh
+##################################
+#!/bin/bash -login
+#PBS -l nodes=1:ppn=1,walltime=03:00:00:00,mem=32gb
+#PBS -j oe
+
+# Variables
+sam_name=`echo ${Var} | cut -d'_' -f1`
+
+# working directory:
+cd /mnt/research/ADOL/Cheng-Lab-Data/common/scRNA_splenocytes
+
+cellranger count \
+--localcores=1 \
+--localmem=32 \
+--id=${Var} \
+--transcriptome=./galgal5 \
+--fastqs=./data/raw_fastq \
+--sample=${sam_name} \
+--expect-cells=3000
+
+qstat -f ${PBS_JOBID}
+#################################
+
+# ../scripts/galgal5_MDV_cellranger_count.sh
+##################################
+#!/bin/bash -login
+#PBS -l nodes=1:ppn=1,walltime=03:00:00:00,mem=30gb
+#PBS -j oe
+
+# Variables
+sam_name=`echo ${Var} | cut -d'_' -f1`
+
+# working directory:
+cd /mnt/research/ADOL/Cheng-Lab-Data/common/scRNA_splenocytes/galgal5_MDV_cellranger_count
+
+cellranger count \
+--localcores=1 \
+--localmem=30 \
+--id=${Var} \
+--transcriptome=../galgal5_and_gallid_herpesvirus_2 \
+--fastqs=../data/raw_fastq \
+--sample=${sam_name} \
+--expect-cells=3000
+
+qstat -f ${PBS_JOBID}
+#################################
+
+# Aggregate the cell ranger counts with cellranger aggr
+# This was a single library analysis
+
+# Set up an aggregation csv
+find ../*S*/outs/ -name "molecule_info.h5" | \
+#./61C_S7/outs/molecule_info.h5
+#./62C_S8/outs/molecule_info.h5
+#./62M_S1/outs/molecule_info.h5
+#./63C_S9/outs/molecule_info.h5
+#./63M_S2/outs/molecule_info.h5
+#./64M_S3/outs/molecule_info.h5
+#./71M_S4/outs/molecule_info.h5
+#./72C_S10/outs/molecule_info.h5
+#./72M_S5/outs/molecule_info.h5
+#./73M_S6/outs/molecule_info.h5
+#./74C_S11/outs/molecule_info.h5
+#./75C_S12/outs/molecule_info.h5
+#./Undetermined_S0/outs/molecule_info.h5
+
+vi ./scRNA_splenocytes_libs.csv
+#library_id,molecule_h5
+#61C_S7_lib1,./61C_S7/outs/molecule_info.h5
+#62C_S8_lib1,./62C_S8/outs/molecule_info.h5
+#62M_S1_lib1,./62M_S1/outs/molecule_info.h5
+#63C_S9_lib1,./63C_S9/outs/molecule_info.h5
+#63M_S2_lib1,./63M_S2/outs/molecule_info.h5
+#64M_S3_lib1,./64M_S3/outs/molecule_info.h5
+#71M_S4_lib1,./71M_S4/outs/molecule_info.h5
+#72C_S10_lib1,./72C_S10/outs/molecule_info.h5
+#72M_S5_lib1,./72M_S5/outs/molecule_info.h5
+#73M_S6_lib1,./73M_S6/outs/molecule_info.h5
+#74C_S11_lib1,./74C_S11/outs/molecule_info.h5
+#75C_S12_lib1,./75C_S12/outs/molecule_info.h5
+#Undetermined_S0_lib1,./Undetermined_S0/outs/molecule_info.h5
+
+# Aggregate the cell ranger counts with cellranger aggr
+qsub ../scripts/cellranger_aggr_scRNA_splenocytes.sh
+
+# ../scripts/cellranger_aggr_scRNA_splenocytes.sh
+##################################
+#!/bin/bash -login
+#PBS -l nodes=1:ppn=1,walltime=01:00:00:00,mem=60gb
+#PBS -j oe
+
+# working directory:
+cd /mnt/research/ADOL/Cheng-Lab-Data/common/scRNA_splenocytes/galgal5_MDV_cellranger_count
+
+cellranger aggr \
+--id=galgal5_MDV_cellranger_aggr \
+--csv=./scRNA_splenocytes_libs.csv \
+--normalize=mapped
+
+qstat -f ${PBS_JOBID}
+#################################
+
+# Take a look at the Ikaros region in the BAM files and see how the reads lined up
+for s in 61C_S7 62C_S8 62M_S1 63C_S9 63M_S2 64M_S3 71M_S4 72C_S10 72M_S5 73M_S6 74C_S11 75C_S12
+do
+echo ${s}
+samtools view -h -b ./${s}/outs/possorted_genome_bam.bam 2:80928032-80986405 \
+> ./${s}/outs/${s}_2:80928032-80986405_IKZF1.bam
+samtools index ./${s}/outs/${s}_2:80928032-80986405_IKZF1.bam
+done
+
+# Transfer the files to Macbook Pro for IGV analysis
+rsync -av --progress --include="*/" --include='*.html' --include='*.sh' --include='*.py' --exclude="*" \
+steepale@rsync.hpcc.msu.edu:/mnt/research/ADOL/Cheng-Lab-Data/common/scRNA_splenocytes/ \
+/Users/Alec/Documents/Bioinformatics/MDV_Project/scRNA_splenocytes/
+
+# Rename the web summary and cloupe files
+for s in 61C_S7 62C_S8 62M_S1 63C_S9 63M_S2 64M_S3 71M_S4 72C_S10 72M_S5 73M_S6 74C_S11 75C_S12 scRNA_spleno_aggr
+do
+echo ${s}
+cp ./${s}/outs/*.cloupe  ./archive/${s}.cloupe
+cp ./${s}/outs/web_summary.html  ./archive/${s}_web_summary.html
+done
+
+# Create a tarball to send to Hans and Cari
+tar -cvzf ./archive/stats_et_cloupe.tar.gz ./archive/*.html ./archive/*.cloupe
+
+
+
+
+
+
