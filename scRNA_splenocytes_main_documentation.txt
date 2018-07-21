@@ -98,7 +98,7 @@ gffread \
 # Instead, perform a custom conversion. Note: exon_ids are insufficient. Manual annotation may be necessary.
 python ./scripts/MDV_gff3_to_gtf.py \
 ./data/gallid_herpesvirus_2_genomic.gff3 \
-./data/gallid_herpesvirus_2_genomic.gtf
+./data/gallid_herpesvirus_2_genomic_exon_adjusted.gtf
 
 # ./scripts/MDV_gff3_to_gtf.py
 ######################################################
@@ -170,6 +170,13 @@ for line in open(infile):
 				# Absolutes: gene_id(1), transcript_id(2), gene_source(4), gene_biotype(5), transcript_source(6), transcript_biotype(7),protein_id(8),
 				# Conditionals: gene_name(3)
 				protein_id = ATTR.split('protein_id=')[1].split(';')[0]
+				# HTSEQ will only count 1 feature type. The default type is exon and is prefered for ensemble gtf files.
+				# We will merge this file with the chicken ensembl file and therefore we will adjust each CDS to also be considered as an exon for counting purposes.
+				if gene_name != "NA": # If gene_name is assigned
+					EXON_ATTR = 'gene_id "'+gene_id+'"; '+'transcript_id "'+transcript_id+'"; '+'gene_name "'+gene_name+'"; '+'gene_source "'+gene_source+'"; '+'gene_biotype "'+gene_biotype+'"; '+'transcript_source "'+transcript_source+'"; '+'transcript_biotype "'+transcript_biotype+'"; '+'exon_id "'+exon_id+'";'
+				elif gene_name == "NA": # If gene_name is not assigned
+					EXON_ATTR = 'gene_id "'+gene_id+'"; '+'transcript_id "'+transcript_id+'"; '+'gene_source "'+gene_source+'"; '+'gene_biotype "'+gene_biotype+'"; '+'transcript_source "'+transcript_source+'"; '+'transcript_biotype "'+transcript_biotype+'"; '+'exon_id "'+exon_id+'";'
+				outfile.write('\t'.join([CHROM,ANNO,'exon',START,END,SCORE,STRAND,FRAME,EXON_ATTR])+'\n')
 				if gene_name != "NA": # If gene_name is assigned
 					CDS_ATTR = 'gene_id "'+gene_id+'"; '+'transcript_id "'+transcript_id+'"; '+'gene_name "'+gene_name+'"; '+'gene_source "'+gene_source+'"; '+'gene_biotype "'+gene_biotype+'"; '+'transcript_source "'+transcript_source+'"; '+'transcript_biotype "'+transcript_biotype+'"; '+'protein_id "'+protein_id+'";'
 				elif gene_name == "NA": # If gene_name is not assigned
@@ -183,9 +190,10 @@ cat \
 ./data/Gallus_gallus.Gallus_gallus-5.0.dna.toplevel.fa \
 ./data/gallid_herpesvirus_2_genomic.fa \
 > ./data/Gallus_gallus_5.0-ensembl_gallid_herpesvirus_2-refseq_genomic_combo.fa
+
 # Combine the chicken reference genome gtf file with the MDV reference genome gtf file
-(grep -h "^#" ./data/Gallus_gallus.Gallus_gallus-5.0.92.gtf ./data/gallid_herpesvirus_2_genomic.gtf;
-grep -h -v "^#" ./data/Gallus_gallus.Gallus_gallus-5.0.92.gtf ./data/gallid_herpesvirus_2_genomic.gtf) \
+(grep -h "^#" ./data/Gallus_gallus.Gallus_gallus-5.0.92.gtf ./data/gallid_herpesvirus_2_genomic_exon_adjusted.gtf;
+grep -h -v "^#" ./data/Gallus_gallus.Gallus_gallus-5.0.92.gtf ./data/gallid_herpesvirus_2_genomic_exon_adjusted.gtf) \
 > ./data/Gallus_gallus_5.0-ensembl_gallid_herpesvirus_2-refseq_genomic_combo.gtf
 
 # Filter the gtf file for genes of interest with mkgtf (will not do for now, may choose to come back and try)
@@ -463,9 +471,13 @@ samtools index ./${s}/outs/${s}_2:80928032-80986405_IKZF1.bam
 done
 
 # Transfer the files to Macbook Pro for IGV analysis
-rsync -av --progress --include="*/" --include='*.html' --include='*.sh' --include='*.py' --exclude="*" \
-steepale@rsync.hpcc.msu.edu:/mnt/research/ADOL/Cheng-Lab-Data/common/scRNA_splenocytes/ \
-/Users/Alec/Documents/Bioinformatics/MDV_Project/scRNA_splenocytes/
+rsync -av --progress --include="*/" --include='*.html'  --exclude="*" \
+steepale@rsync.hpcc.msu.edu:/mnt/research/ADOL/Cheng-Lab-Data/common/scRNA_splenocytes/galgal5_MDV_cellranger_count/ \
+/Users/Alec/Documents/Bioinformatics/MDV_Project/scRNA_splenocytes/galgal5_MDV_cellranger_count/
+
+rsync -av --progress \
+steepale@rsync.hpcc.msu.edu:/mnt/research/ADOL/Cheng-Lab-Data/common/scRNA_splenocytes/data/*.gff3 \
+/Users/Alec/Documents/Bioinformatics/MDV_Project/scRNA_splenocytes/data/
 
 # Rename the web summary and cloupe files
 for s in 61C_S7 62C_S8 62M_S1 63C_S9 63M_S2 64M_S3 71M_S4 72C_S10 72M_S5 73M_S6 74C_S11 75C_S12 scRNA_spleno_aggr
@@ -478,7 +490,18 @@ done
 # Create a tarball to send to Hans and Cari
 tar -cvzf ./archive/stats_et_cloupe.tar.gz ./archive/*.html ./archive/*.cloupe
 
+# Update GIT from Macbook pro
 
+# Add stuff
+git add ./scripts/*
+git add ./*main_documentation.txt
+git add ./\*.html
+git add ./\*.gff3
+git add /Users/Alec/Documents/Bioinformatics/MDV_Project/scRNA_splenocytes/data/gallid_herpesvirus_2_genomic.gtf
+#Commit to remote
+git commit -m "Uploading scripts, HTML reports, gff3, and gtf files"
+# Push the commit 
+git push -u origin master
 
 
 
